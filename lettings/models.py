@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy
 
 
 class Address(models.Model):
@@ -15,7 +15,7 @@ class Address(models.Model):
         return f'{self.number} {self.street}'
 
     class Meta:
-        verbose_name_plural = _("Adresses")
+        verbose_name_plural = gettext_lazy("Adresses")
 
 
 class Letting(models.Model):
