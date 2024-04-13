@@ -15,7 +15,7 @@ class Address(models.Model):
         return f'{self.number} {self.street}'
 
     class Meta:
-        verbose_name_plural = gettext_lazy("Adresses")
+        verbose_name_plural = gettext_lazy("Addresses")
 
 
 class Letting(models.Model):
