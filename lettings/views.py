@@ -8,7 +8,15 @@ from lettings.models import Letting
 # Integer est nunc, pulvinar a tempor et, bibendum id arcu.
 # Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
 # Cras eget scelerisque
-def index(request):
+def index(request: object) -> object:
+    """A class represent the index view
+
+    Arguments:
+        request -- object: HttpRequest
+
+    Returns:
+        object: a Http response object
+    """
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
@@ -27,7 +35,16 @@ def index(request):
 # eget bibendum lorem. Sed non dolor risus. Mauris condimentum auctor elementum.
 # Donec quis nisi ligula. Integer vehicula tincidunt enim,
 # ac lacinia augue pulvinar sit amet.
-def letting(request, letting_id):
+def letting(request: object, letting_id: id) -> object:
+    """A class to represent a letting view
+
+    Arguments:
+        request -- object: HttpRequest
+        letting_id -- int: letting id
+
+    Returns:
+        _description_
+    """
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,

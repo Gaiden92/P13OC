@@ -10,5 +10,13 @@ from django.shortcuts import render
 # venenatis tempus. Aliquam vitae erat ac orci placerat luctus.
 # Nullam elementum urna nisi, pellentesque iaculis enim cursus in.
 # Praesent volutpat porttitor magna, non finibus neque cursus id.
-def index(request):
+def index(request: object) -> object:
+    """A method to display the index template
+
+    Arguments:
+        request -- object: HttpRequest
+
+    Returns:
+        object: HttpResponse
+    """
     return render(request, 'index.html')

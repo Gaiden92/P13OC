@@ -7,7 +7,15 @@ from .models import Profile
 # sed consequat libero pulvinar eget. Fusc
 # faucibus, urna quis auctor pharetra, massa dolor cursus neque,
 # quis dictum lacus d
-def index(request):
+def index(request: object) -> object:
+    """A method to display the index template
+
+    Arguments:
+        request -- object: HttpRequest
+
+    Returns:
+        object: HttpResponse
+    """
     profiles_list = Profile.objects.all()
     print(profiles_list)
     context = {'profiles_list': profiles_list}
@@ -19,7 +27,16 @@ def index(request):
 # Sed tincidunt, dolor id facilisis fringilla, eros leo tristique lacus,
 # it. Nam aliquam dignissim congue. Pellentesque habitant morbi
 # tristique senectus et netus et males
-def profile(request, username):
+def profile(request: object, username: str) -> object:
+    """A method to display the profile template
+
+    Arguments:
+        request -- object: HttpRequest
+        username -- str: username
+
+    Returns:
+        object: HttpResponse
+    """
     profile = Profile.objects.get(user__username=username)
     context = {'profile': profile}
     return render(request, 'profiles/profile.html', context)
