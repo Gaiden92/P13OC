@@ -13,25 +13,25 @@ class TestLetting(TestCase):
             state="92",
             zip_code=92150,
             country_iso_code="FRA")
-        
+
         self.letting = Letting.objects.create(title="title letting", address=self.address)
-         
+
     def test_letting(self):
         self.assertEqual(self.letting.address, self.address)
 
     def test_letting_title(self):
-        self.title= "Other title"
+        self.title = "Other title"
         self.assertNotEqual(self.letting.title, self.title)
-    
+
     def test_letting_address(self):
-        self.address= Address.objects.create(
+        self.address = Address.objects.create(
             number=10,
             street="allée des Bananiers",
             city="Rueil",
             state="92",
             zip_code=92150,
             country_iso_code="FRA")
-        
+
         self.assertNotEqual(self.letting.address, self.address)
 
 
@@ -43,7 +43,7 @@ class TestIndexView(TestCase):
 
     def test_response(self):
         self.assertEqual(self.response.status_code, 200)
-    
+
     def test_template(self):
         self.assertTemplateUsed(self.response, 'lettings/index.html')
 
@@ -58,7 +58,7 @@ class TestLettingsView(TestCase):
             state="92",
             zip_code=92150,
             country_iso_code="FRA")
-        
+
         self.letting = Letting.objects.create(title="title letting", address=self.address)
 
         self.client = Client()
@@ -66,12 +66,12 @@ class TestLettingsView(TestCase):
 
     def test_response(self):
         self.assertEqual(self.response.status_code, 200)
-    
+
     def test_template(self):
         self.assertTemplateUsed(self.response, 'lettings/index.html')
 
 
-class TestLettingsView(TestCase):
+class TestLettingView(TestCase):
     def setUp(self) -> None:
 
         self.address = Address.objects.create(
@@ -81,7 +81,7 @@ class TestLettingsView(TestCase):
             state="92",
             zip_code=92150,
             country_iso_code="FRA")
-        
+
         self.letting = Letting.objects.create(title="title letting", address=self.address)
 
         self.client = Client()
