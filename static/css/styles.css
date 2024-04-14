@@ -20245,3 +20245,35 @@ section {
     border-right: 0.0625rem solid #e0e5ec;
   }
 }
+
+div.container-page-error{
+  height: 500px;
+  text-align: center;
+}
+div.page-error{
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+div.page-error > h1{
+  font-weight: bold;
+  font-size: 150px;
+  color: #a22b02;
+}
+
+div.page-error > h2{
+  font-weight: bold;
+  font-size: 100px;
+  color: #a22b02;
+  font-family: cursive;
+}
+
+div.page-error > p{
+  color: black;
+  font-size: 30px;
+  margin: 5px auto;
+}
