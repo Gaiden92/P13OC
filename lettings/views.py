@@ -1,4 +1,6 @@
-from django.shortcuts import render
+import logging
+from oc_lettings_site.settings import sentry_sdk
+from django.shortcuts import render, redirect
 
 from lettings.models import Letting
 
@@ -17,7 +19,14 @@ def index(request: object) -> object:
     Returns:
         object: a Http response object
     """
-    lettings_list = Letting.objects.all()
+    logging.info("User in lettings index page.")
+    try:
+        with sentry_sdk.start_transaction(name="get_all_lettings"):
+            lettings_list = Letting.objects.all()
+            logging.info(f"{len(lettings_list)} total lettings get.")
+    except ValueError:
+        logging.warning("None lettigns in database")
+        return redirect("index")
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
 
@@ -45,9 +54,17 @@ def letting(request: object, letting_id: id) -> object:
     Returns:
         _description_
     """
-    letting = Letting.objects.get(id=letting_id)
-    context = {
-        'title': letting.title,
-        'address': letting.address,
-    }
+    logging.info("User in letting page.")
+    try:
+        with sentry_sdk.start_transaction(name="get_letting"):
+            letting = Letting.objects.get(id=letting_id)
+            context = {
+                'title': letting.title,
+                'address': letting.address,
+                }
+            logging.info(f'Letting: {letting.title}')
+    except Letting.DoesNotExist:
+        logging.info(f'This Letting id, not exist: "{letting_id}"')
+        return redirect("lettings_index")
+
     return render(request, 'lettings/letting.html', context)

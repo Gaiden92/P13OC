@@ -1,6 +1,42 @@
 import os
-
+import json
+import logging
 from pathlib import Path
+
+import django.db.models.signals
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+
+
+# Initialization of Sentry
+with open("sentry_configuration.json", "r") as file:
+    DSN = json.load(file)['dsn']
+
+# Initialisation of default level
+logging.basicConfig(level=logging.INFO)
+
+sentry_sdk.init(
+    dsn=DSN,
+    enable_tracing=True,
+    integrations=[
+        DjangoIntegration(
+            transaction_style='url',
+            middleware_spans=True,
+            signals_spans=True,
+            signals_denylist=[
+                django.db.models.signals.pre_init,
+                django.db.models.signals.post_init,
+            ],
+            cache_spans=False,
+        ),
+        LoggingIntegration(
+            level=logging.INFO,
+            event_level=logging.INFO
+        ),
+
+    ],
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent

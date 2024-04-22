@@ -1,6 +1,8 @@
-from django.shortcuts import render
+import logging
+from django.shortcuts import render, redirect
 
 from .models import Profile
+from oc_lettings_site.settings import sentry_sdk
 
 
 # Sed placerat quam in pulvinar commodo. Nullam laoreet consectetur ex,
@@ -16,8 +18,14 @@ def index(request: object) -> object:
     Returns:
         object: HttpResponse
     """
-    profiles_list = Profile.objects.all()
-    print(profiles_list)
+    logging.info("User in profiles index page.")
+    try:
+        with sentry_sdk.start_transaction(name="get_all_profiles"):
+            profiles_list = Profile.objects.all()
+            logging.info(f"{len(profiles_list)} total profiles get.")
+    except ValueError:
+        logging.warning("None profiles in database.")
+        return redirect('index')
     context = {'profiles_list': profiles_list}
     return render(request, 'profiles/index.html', context)
 
@@ -37,6 +45,13 @@ def profile(request: object, username: str) -> object:
     Returns:
         object: HttpResponse
     """
-    profile = Profile.objects.get(user__username=username)
+    logging.info("User in profile page.")
+    try:
+        with sentry_sdk.start_transaction(name="get_profile"):
+            profile = Profile.objects.get(user__username=username)
+            logging.info(f'Profile: {profile.user.username}')
+    except Profile.DoesNotExist:
+        logging.info(f'This Profile, not exist: "{username}"')
+        return redirect('profiles_index')
     context = {'profile': profile}
     return render(request, 'profiles/profile.html', context)

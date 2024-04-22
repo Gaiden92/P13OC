@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 
 
@@ -19,4 +21,5 @@ def index(request: object) -> object:
     Returns:
         object: HttpResponse
     """
+    logging.info("User in index page.")
     return render(request, 'index.html')
