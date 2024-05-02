@@ -23,9 +23,9 @@ def index(request: object) -> object:
     try:
         with sentry_sdk.start_transaction(name="get_all_lettings"):
             lettings_list = Letting.objects.all()
-            logging.info(f"{len(lettings_list)} total lettings get.")
+            logging.info(f"This user has {len(lettings_list)} lettings.")
     except ValueError:
-        logging.warning("None lettigns in database")
+        logging.warning("No lettings in database")
         return redirect("index")
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
