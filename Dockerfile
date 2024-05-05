@@ -38,9 +38,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
 
-# Switch to the non-privileged user to run the application.
-USER appuser
-
 # Copy the source code into the container.
 COPY . .
 
@@ -48,4 +45,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD gunicorn 'oc_lettings_site.wsgi' --bind=0.0.0.0:8000
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
