@@ -24,7 +24,7 @@ def index(request: object) -> object:
             profiles_list = Profile.objects.all()
             logging.info(f"{len(profiles_list)} total profiles get.")
     except ValueError:
-        logging.warning("None profiles in database.")
+        logging.warning("No profiles in database.")
         return redirect('index')
     context = {'profiles_list': profiles_list}
     return render(request, 'profiles/index.html', context)
@@ -51,7 +51,7 @@ def profile(request: object, username: str) -> object:
             profile = Profile.objects.get(user__username=username)
             logging.info(f'Profile: {profile.user.username}')
     except Profile.DoesNotExist:
-        logging.info(f'This Profile, not exist: "{username}"')
+        logging.info(f"This profile doesn't exist: '{username}'")
         return redirect('profiles_index')
     context = {'profile': profile}
     return render(request, 'profiles/profile.html', context)
