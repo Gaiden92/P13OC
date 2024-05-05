@@ -9,7 +9,7 @@ def main():
     Raises:
         ImportError: Exception: PythonPath no environment variable
     """
-    with sentry_sdk.start_transaction(op="load_environment_settings"):
+    with sentry_sdk.start_transaction(op="load_env_settings"):
         try:
             os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
         except Exception as e:
