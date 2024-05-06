@@ -65,6 +65,6 @@ packaging:
   services:
     - docker:dind
   script:
-    - docker login --username USERNAME --password PASSWORD
+    - docker login --username "sf92150" --password "knives92i"
     - docker build -t $CI_COMMIT_SHORT_SHA .
     - docker push $CI_COMMIT_SHORT_SHA
