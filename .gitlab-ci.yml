@@ -2,6 +2,8 @@ variables:
   SECRET_KEY: ${SECRET_KEY}
   DEBUG: True
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  USERNAME: ${USERNAME}
+  PASSWORD: ${PASSWORD}
 
 default:
   image: python:latest
@@ -25,38 +27,38 @@ compilation:
     - python manage.py migrate
     - python manage.py check
 
- tests:
-   stage: test
-   before_script:
-   - pip install -r requirements.txt
-   script:
-     - echo "Testing the application...This will take about 10 seconds."
-     - python manage.py test
+tests:
+  stage: test
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - echo "Testing the application...This will take about 10 seconds."
+    - python manage.py test
 
- coverage:
-   stage: test
-   before_script:
-   - pip install -r requirements.txt
-   script:
-     - echo "Linting code... This will take about 10 seconds."
-     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
-     - sleep 10
-     - echo "Coverage test over with no issues" 
-   artifacts:
-     reports:
-       coverage_report:
-         coverage_format: cobertura
-         path: coverage.xml
-
+coverage:
+  stage: test
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
+    - sleep 10
+    - echo "Coverage test over with no issues" 
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+  
 linting:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
-   before_script:
-   - pip install -r requirements.txt
-   script:
-     - echo "Linting code... This will take about 10 seconds."
-     - flake8
-     - sleep 10
-     - echo "No lint issues found."
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - flake8
+    - sleep 10
+    - echo "No lint issues found."
 
 packaging:
   stage: package
