@@ -31,12 +31,26 @@ migrations:
 django-tests:
   stage: test
   script:
+    - echo "Testing the application...This will take about 10 seconds."
     - python3 manage.py test
 
+coverage-test:
+  stage: test
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - pytest --cov --cov-report term --cov-report xml:coverage.xml
+    - sleep 10
+    - echo "Coverage test over with no issues" 
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+  
 lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
   script:
-    - flake8
     - echo "Linting code... This will take about 10 seconds."
+    - flake8
     - sleep 10
     - echo "No lint issues found."

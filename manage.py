@@ -2,7 +2,6 @@ import os
 import sys
 import sentry_sdk
 
-
 def main():
     """
     Method to launch the main programm
