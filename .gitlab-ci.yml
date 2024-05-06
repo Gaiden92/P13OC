@@ -67,5 +67,5 @@ packaging:
     - docker:dind
   script:
     - docker build -t sf92150/$CI_COMMIT_SHORT_SHA .
-    - docker login -u sf92150 -p knives92i
+    - docker login -u sf92150 -p gitlab-ci-token
     - docker push sf92150/$CI_COMMIT_SHORT_SHA
