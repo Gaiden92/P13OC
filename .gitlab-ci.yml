@@ -1,9 +1,5 @@
 variables:
-  SECRET_KEY: ${SECRET_KEY}
-  DEBUG: True
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  USERNAME: ${USERNAME}
-  PASSWORD: ${PASSWORD}
 
 default:
   image: python:latest
@@ -66,6 +62,6 @@ packaging:
   services:
     - docker:dind
   script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN docker.io
+    - docker login -u sf92150 -p knives92i docker.io
     - docker build -t sf92150/$CI_COMMIT_SHORT_SHA .
     - docker push sf92150/$CI_COMMIT_SHORT_SHA
