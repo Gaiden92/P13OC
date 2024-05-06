@@ -27,12 +27,16 @@ compilation:
 
 tests:
   stage: test
+  before_script:
+  - pip install -r requirements.txt
   script:
     - echo "Testing the application...This will take about 10 seconds."
     - python manage.py test
 
 coverage:
   stage: test
+  before_script:
+  - pip install -r requirements.txt
   script:
     - echo "Linting code... This will take about 10 seconds."
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
@@ -46,6 +50,8 @@ coverage:
   
 linting:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
+  before_script:
+  - pip install -r requirements.txt
   script:
     - echo "Linting code... This will take about 10 seconds."
     - flake8
