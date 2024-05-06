@@ -38,7 +38,7 @@ coverage-test:
   stage: test
   script:
     - echo "Linting code... This will take about 10 seconds."
-    - pytest --cov --cov-report term --cov-report xml:coverage.xml
+    - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
     - sleep 10
     - echo "Coverage test over with no issues" 
   artifacts:
