@@ -9,7 +9,7 @@ default:
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
-  - quality
+  - package
 
 cache:
   paths:
@@ -19,20 +19,20 @@ cache:
 before_script:
   - pip install -r requirements.txt
 
-migrations:
+compilation:
   stage: build
   script:
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py check
 
-django-tests:
+tests:
   stage: test
   script:
     - echo "Testing the application...This will take about 10 seconds."
     - python manage.py test
 
-coverage-test:
+coverage:
   stage: test
   script:
     - echo "Linting code... This will take about 10 seconds."
@@ -45,7 +45,7 @@ coverage-test:
         coverage_format: cobertura
         path: coverage.xml
   
-lint-test-job:   # This job also runs in the test stage.
+linting:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
   script:
     - echo "Linting code... This will take about 10 seconds."
@@ -53,8 +53,8 @@ lint-test-job:   # This job also runs in the test stage.
     - sleep 10
     - echo "No lint issues found."
 
-packaging-job:
-  stage: build
+packaging:
+  stage: package
   image: docker:stable
   services:
     - docker:dind
