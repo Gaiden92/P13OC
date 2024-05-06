@@ -1,5 +1,9 @@
 variables:
+  SECRET_KEY: ${SECRET_KEY}
+  DEBUG: True
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  USERNAME: ${USERNAME}
+  PASSWORD: ${PASSWORD}
 
 default:
   image: python:latest
@@ -19,6 +23,8 @@ compilation:
   before_script:
   - pip install -r requirements.txt
   script:
+    - echo "USERNAME"
+    - echo "SECRET_KEY"
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py check
