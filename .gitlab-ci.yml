@@ -2,8 +2,6 @@ variables:
   SECRET_KEY: ${SECRET_KEY}
   DEBUG: True
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  USERNAME: ${USERNAME}
-  PASSWORD: ${PASSWORD}
 
 default:
   image: python:latest
@@ -67,4 +65,4 @@ packaging:
   script:
     - docker build -t $CI_COMMIT_SHORT_SHA .
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker push $CI_COMMIT_SHORT_SHA
+    - docker push gitlab-ci-token/$CI_COMMIT_SHORT_SHA
