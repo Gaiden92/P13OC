@@ -55,11 +55,10 @@ lint-test-job:   # This job also runs in the test stage.
     - echo "No lint issues found."
 
 packaging-job:
-  stage: package
+  stage: build
   image: docker:stable
   services:
     - docker:dind
   script:
     - docker build -t "$CI_COMMIT_SHORT_SHA" .
     - docker push "$CI_COMMIT_SHORT_SHA"
-      
