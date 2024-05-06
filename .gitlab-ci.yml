@@ -59,5 +59,6 @@ packaging:
   services:
     - docker:dind
   script:
+    - apk update && apk add python
     - docker build -t "$CI_COMMIT_SHORT_SHA" .
     - docker push "$CI_COMMIT_SHORT_SHA"
