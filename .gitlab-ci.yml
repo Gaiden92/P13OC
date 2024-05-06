@@ -53,12 +53,15 @@ lint-test-job:   # This job also runs in the test stage.
     - sleep 10
     - echo "No lint issues found."
 
-code_quality_job:
-  stage: quality
+packaging-job:
+  stage: package
   allow_failure: true
   image: docker:stable
   services:
     - docker:dind
+  before-script:
+ - apk add python python-dev python pip
   script:
     - docker build -t $CI_COMMIT_SHORT_SHA .
+    - docker push $CI_COMMIT_SHORT_SHA
       
