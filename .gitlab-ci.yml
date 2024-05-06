@@ -60,13 +60,5 @@ code_quality_job:
   services:
     - docker:dind
   script:
-    - mkdir codequality-results
-    - docker run
-        --env CODECLIMATE_CODE="$PWD"
-        --volume "$PWD":/code
-        --volume /var/run/docker.sock:/var/run/docker.sock
-        --volume /tmp/cc:/tmp/cc
-        codeclimate/codeclimate analyze -f html > ./codequality-results/index.html
-  artifacts:
-    paths:
-      - codequality-results/
+    - docker build -t $CI_COMMIT_SHORT_SHA .
+      
