@@ -61,7 +61,7 @@ packaging:
   services:
     - docker:dind
   script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    
     - docker build -t $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA .
-    - docker login -u $CI_REGISTRY_USER --password-stdin docker.io
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker push $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA
