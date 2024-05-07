@@ -23,6 +23,8 @@ compilation:
   before_script:
   - pip install -r requirements.txt
   script:
+    - echo "USERNAME"
+    - echo "SECRET_KEY"
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py check
