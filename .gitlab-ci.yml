@@ -23,8 +23,6 @@ compilation:
   before_script:
   - pip install -r requirements.txt
   script:
-    - echo "USERNAME"
-    - echo "SECRET_KEY"
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py check
@@ -34,7 +32,6 @@ tests:
   before_script:
   - pip install -r requirements.txt
   script:
-    - echo "Testing the application...This will take about 10 seconds."
     - python manage.py test
 
 coverage:
@@ -42,9 +39,7 @@ coverage:
   before_script:
   - pip install -r requirements.txt
   script:
-    - echo "Linting code... This will take about 10 seconds."
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
-    - sleep 10
     - echo "Coverage test over with no issues" 
   artifacts:
     reports:
@@ -57,9 +52,7 @@ linting:   # This job also runs in the test stage.
   before_script:
   - pip install -r requirements.txt
   script:
-    - echo "Linting code... This will take about 10 seconds."
     - flake8
-    - sleep 10
     - echo "No lint issues found."
 
 packaging:
@@ -69,5 +62,6 @@ packaging:
     - docker:dind
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker build -t sf92150/$CI_COMMIT_SHORT_SHA .
-    - docker push sf92150/$CI_COMMIT_SHORT_SHA
+    - docker build -t $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD docker.io
+    - docker push $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA
