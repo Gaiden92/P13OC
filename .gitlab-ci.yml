@@ -66,5 +66,5 @@ packaging:
     - echo "$DOCKER_HUB_USERNAME"
     - echo "$DOCKER_HUB_PASSWORD"
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
-    - docker build -t $CI_COMMIT_SHORT_SHA .
-    - docker push $CI_COMMIT_SHORT_SHA
+    - docker build -t $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA .
+    - docker push $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA
