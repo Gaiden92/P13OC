@@ -8,9 +8,9 @@ variables:
 default:
   image: python:latest
 
-stages:          # List of stages for jobs, and their order of execution
-  # - build
-  # - test
+stages:
+  - build
+  - test
   - package
 
 cache:
@@ -18,42 +18,42 @@ cache:
         - .cache/pip
   key: "$CI_JOB_NAME"
 
-# compilation:
-#   stage: build
-#   before_script:
-#   - pip install -r requirements.txt
-#   script:
-#     - python manage.py makemigrations
-#     - python manage.py migrate
-#     - python manage.py check
+compilation:
+  stage: build
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - python manage.py makemigrations
+    - python manage.py migrate
+    - python manage.py check
 
-# tests:
-#   stage: test
-#   before_script:
-#   - pip install -r requirements.txt
-#   script:
-#     - python manage.py test
+tests:
+  stage: test
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - python manage.py test
 
-# coverage:
-#   stage: test
-#   before_script:
-#   - pip install -r requirements.txt
-#   script:
-#     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
-#     - echo "Coverage test over with no issues" 
-#   artifacts:
-#     reports:
-#       coverage_report:
-#         coverage_format: cobertura
-#         path: coverage.xml
+coverage:
+  stage: test
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
+    - echo "Coverage test over with no issues" 
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
   
-# linting:   # This job also runs in the test stage.
-#   stage: test    # It can run at the same time as unit-test-job (in parallel).
-#   before_script:
-#   - pip install -r requirements.txt
-#   script:
-#     - flake8
-#     - echo "No lint issues found."
+linting:
+  stage: test
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - flake8
+    - echo "No lint issues found."
 
 packaging:
   stage: package
@@ -61,8 +61,8 @@ packaging:
   services:
     - docker:dind
   script:
-    
-    - docker build -t $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA .
-    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
-    - echo $CI_REGISTRY_USER
-    - docker push $CI_REGISTRY_USER/$CI_COMMIT_SHORT_SHA
+    - echo "$DOCKER_HUB_USERNAME"
+    - echo "$DOCKER_HUB_PASSWORD"
+    - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
+    - docker build -t $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA .
+    - docker push $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA
