@@ -63,8 +63,6 @@ packaging:
   variables:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   script:
-    - echo "$DOCKER_HUB_USERNAME"
-    - echo "$DOCKER_HUB_PASSWORD"
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
     - docker build -t $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA .
     - docker push $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA
