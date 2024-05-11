@@ -61,8 +61,7 @@ packaging:
   services:
     - docker:dind
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - echo "$CI_REGISTRY_USER"
-    - docker images
-    - docker build -t $CI_REGISTRY_USER/sf92150/$CI_COMMIT_SHORT_SHA:latest .
-    - docker push $CI_REGISTRY_USER/sf92150/$CI_COMMIT_SHORT_SHA:latest
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - echo $CI_REGISTER_IMAGE
+    - docker push CI_REGISTRY_IMAGE
