@@ -8,5 +8,3 @@ services:
     envVars:
     - key: SECRET_KEY
       generateValue: true
-    - key: ALLOWED_HOSTS
-      value: 'oc-lettings-hio6.onrender.com'
