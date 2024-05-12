@@ -70,9 +70,9 @@ packaging:
 
 deploy:
   stage: deploy
-  image: alpine
+  image: python:3.11
   script:
-    - apk add --no-cache curl
-    - curl -X POST -H "Authorization: Bearer $RENDER_API_TOKEN" "$RENDER_API_URL/services/$RENDER_SERVICE_NAME/deploy"
+    - pip install -r requirements.txt
+    - python manage.py runserver  
   only:
     - main
