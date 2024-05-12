@@ -2,6 +2,9 @@ services:
   - type: web
     plan: free
     name: oc_lettings
-    runtime: python
+    runtime: python 
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python manage.py runserver"
+    envVars:
+    - key: SECRET_KEY
+      generateValue: true
