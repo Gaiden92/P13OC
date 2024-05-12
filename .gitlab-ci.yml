@@ -75,4 +75,4 @@ deploy:
     - pip install render.yml
     - render deploy --config render.yml
   only:
-  - master
+  - main
