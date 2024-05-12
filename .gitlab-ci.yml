@@ -72,7 +72,7 @@ deploy:
   stage: deploy
   image: python:latest
   script:
-    - pip install render.yml
+    - pip install render.yaml
     - render deploy --config render.yml
   only:
   - main
