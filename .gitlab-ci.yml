@@ -12,6 +12,7 @@ stages:
   - build
   - test
   - package
+  - deploy
 
 cache:
   paths:
@@ -66,3 +67,12 @@ packaging:
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
     - docker build -t $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA .
     - docker push $DOCKER_HUB_USERNAME/$CI_COMMIT_SHORT_SHA
+
+deploy:
+  stage: deploy
+  image: python:latest
+  script:
+    - pip install render.yml
+    - render deploy --config render.yml
+  only:
+  - master
