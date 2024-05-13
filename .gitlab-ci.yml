@@ -35,7 +35,7 @@ linting:
   - pip install -r requirements.txt
   script:
     - flake8
-    - echo "No lint issues found."
+    - echo "No lint issue found."
 
 tests:
   stage: test
