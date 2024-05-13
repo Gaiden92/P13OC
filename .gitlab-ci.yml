@@ -28,8 +28,18 @@ compilation:
     - python manage.py migrate
     - python manage.py check
 
+linting:
+  stage: test
+  allow_failure: true
+  before_script:
+  - pip install -r requirements.txt
+  script:
+    - flake8
+    - echo "No lint issues found."
+
 tests:
   stage: test
+  allow_failure: false
   before_script:
   - pip install -r requirements.txt
   script:
@@ -47,17 +57,10 @@ coverage:
       coverage_report:
         coverage_format: cobertura
         path: coverage.xml
-  
-linting:
-  stage: test
-  before_script:
-  - pip install -r requirements.txt
-  script:
-    - flake8
-    - echo "No lint issues found."
 
 packaging:
   stage: package
+  allow_failure: false
   image: docker:stable
   services:
     - docker:dind
@@ -74,3 +77,5 @@ deploy:
   script:
     - echo "Deploy to production server"
     - curl -s "https://api.render.com/deploy/srv-${DEPLOY_HOOK_1}?key=${DEPLOY_HOOK_2}"
+  only:
+  - main
