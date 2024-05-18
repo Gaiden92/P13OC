@@ -1,7 +1,7 @@
 services:
-  - type: web
+  - type: image
     plan: free
-    name: oc_lettings
-    runtime: python 
-    buildCommand: "./build.sh"
-    startCommand: "python manage.py runserver 0.0.0.0:8000"
+    name: oc_lettings_site
+    runtime: docker
+    buildCommand: "docker build"
+    startCommand: "docker run"
