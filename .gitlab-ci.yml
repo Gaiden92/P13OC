@@ -69,8 +69,8 @@ packaging:
   script:
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
     - docker build -t $CI_PROJECT_NAME/$CI_COMMIT_SHORT_SHA .
-    - docker push $CI_PROJECT_NAME/$CI_COMMIT_SHORT_SHA
-    - docker pull $CI_PROJECT_NAME:latest
+    - docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME/$CI_COMMIT_SHORT_SHA
+    - docker pull $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
 
 deploy:
   stage: deploy
