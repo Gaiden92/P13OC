@@ -68,8 +68,9 @@ packaging:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   script:
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
-    - docker build -t $CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA .
-    - docker tag $CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA $CI_PROJECT_NAME:latest 
+    - docker build image .
+    - docker tag image:latest $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
+    - docker tag $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
     - docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
     - docker pull $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME
 
