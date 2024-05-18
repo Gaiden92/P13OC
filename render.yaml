@@ -1,7 +1,0 @@
-services:
-  - type: image
-    plan: free
-    name: oc_lettings_site
-    runtime: docker
-    buildCommand: "docker build"
-    startCommand: "docker run"
