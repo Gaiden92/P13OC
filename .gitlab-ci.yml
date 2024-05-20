@@ -1,5 +1,4 @@
 variables:
-  SECRET_KEY: ${SECRET_KEY}
   DEBUG: True
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
   USERNAME: ${USERNAME}
@@ -66,7 +65,6 @@ packaging:
     - docker:dind
   variables:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-    SECRET_KEY: $SECRET_KEY
   script:
     - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
     - docker build --tag $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA --tag $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest .
