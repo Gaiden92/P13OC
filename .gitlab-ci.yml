@@ -1,6 +1,6 @@
 variables:
   SECRET_KEY: ${SECRET_KEY}
-  DEBUG: True
+  DEBUG: False
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
   USERNAME: ${USERNAME}
   PASSWORD: ${PASSWORD}
