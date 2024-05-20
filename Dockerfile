@@ -37,13 +37,15 @@ RUN adduser \
 RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
-    
+
 
 # Copy the source code into the container.
 COPY . .
 
 # Expose the port that the application listens on.
 EXPOSE 8000
+
+RUN python manage.py collectstatic --noinput
 
 # Run the application.
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
