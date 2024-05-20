@@ -40,7 +40,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     python manage.py makemigrations \
     python manage.py migrate \
     python manage.py check \
-    python manage.py collectstatic
+    python manage.py collectstatic --noinput
 
 # Copy the source code into the container.
 COPY . .
