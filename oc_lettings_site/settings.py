@@ -54,7 +54,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
-                 'https://one0cf13e7-latest.onrender.com/']
+                 'one0cf13e7-latest.onrender.com']
 
 
 # Application definition
