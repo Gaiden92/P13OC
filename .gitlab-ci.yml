@@ -6,9 +6,9 @@ variables:
 
 default:
   image: python:latest
-    before_script:
-      - pip install --upgrade pip
-      - pip install -r requirements.txt
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
 stages:
   - build
   - test
@@ -46,8 +46,6 @@ tests:
 coverage:
   stage: test
   allow_failure: true
-  before_script:
-  - pip install -r requirements.txt
   script:
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
     - echo "Coverage test over with no issues" 
