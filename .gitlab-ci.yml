@@ -6,9 +6,7 @@ variables:
 
 default:
   image: python:latest
-  before_script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
+
 stages:
   - build
   - test
@@ -22,9 +20,9 @@ cache:
 
 compilation:
   stage: build
-
+  before_script:
+  - pip install -r requirements.txt
   script:
-    - python manage.py collectstatic --noinput
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py check
@@ -32,20 +30,24 @@ compilation:
 linting:
   stage: test
   allow_failure: true
-
+  before_script:
+  - pip install -r requirements.txt
   script:
     - flake8
     - echo "No lint issue found."
 
 tests:
   stage: test
-  allow_failure: true
+  allow_failure: false
+  before_script:
+  - pip install -r requirements.txt
   script:
     - python manage.py test
 
 coverage:
   stage: test
-  allow_failure: true
+  before_script:
+  - pip install -r requirements.txt
   script:
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
     - echo "Coverage test over with no issues" 
@@ -57,7 +59,7 @@ coverage:
 
 packaging:
   stage: package
-  allow_failure: true
+  allow_failure: false
   image: docker:stable
   services:
     - docker:dind
