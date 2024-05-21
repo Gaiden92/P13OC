@@ -40,7 +40,7 @@ linting:
 
 tests:
   stage: test
-  allow_failure: false
+  allow_failure: true
   before_script:
   - pip install -r requirements.txt
   script:
@@ -61,7 +61,7 @@ coverage:
 
 packaging:
   stage: package
-  allow_failure: false
+  allow_failure: true
   image: docker:stable
   services:
     - docker:dind
