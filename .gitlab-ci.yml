@@ -50,7 +50,7 @@ coverage:
   before_script:
   - pip install -r requirements.txt
   script:
-    - - python manage.py collectstatic --noinput
+    - python manage.py collectstatic --noinput
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
     - echo "Coverage test over with no issues" 
   artifacts:
