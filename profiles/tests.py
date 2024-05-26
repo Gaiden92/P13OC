@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
+
 from .models import Profile, User
 from profiles.apps import ProfilesConfig
 
@@ -9,27 +10,49 @@ class TestProfile(TestCase):
     """Class for testing the Profile model."""
     def setUp(self):
         """Initialization of data for tests."""
-        self.data = {
-            "username": "Test",
-            "password": "hello",
-            "email": "test@hotmail.fr",
-            "first_name": "Test Firstname",
-            "last_name": "Test Lastname",
-        }
-        self.favorite_city = "Suresnes"
-        self.user = User.objects.create_user(**self.data)
-        self.profile = Profile.objects.create(
-            user=self.user,
-            favorite_city=self.favorite_city
+        self.user = User.objects.create_user(
+            username='testuser',
+            email='test@example.com',
+            password='testpassword'
         )
 
-    def test_profile(self):
-        """Method to test the association between profile and user."""
-        self.assertEqual(self.profile.user, self.user)
+    def test_create_profile(self):
+        """Method to test a profile creation."""
+        profile = Profile.objects.create(user=self.user, favorite_city='Test City')
 
-    def test_profile_favorite_city(self):
-        """Method to test favorite city in the profile."""
-        self.assertNotEqual(self.profile.favorite_city, "Madrid")
+        # Assert that the profile is created successfully
+        self.assertEqual(Profile.objects.count(), 1)
+        self.assertEqual(profile.user, self.user)
+        self.assertEqual(profile.favorite_city, 'Test City')
+
+    def test_read_profile(self):
+        """Method to test a profile read."""
+        profile = Profile.objects.create(user=self.user, favorite_city='Test City')
+
+        # Retrieve the profile from the database
+        retrieved_profile = Profile.objects.get(user=self.user)
+
+        # Assert that the retrieved profile matches the created profile
+        self.assertEqual(retrieved_profile, profile)
+
+    def test_update_profile(self):
+        """Method to test a profile update."""
+        profile = Profile.objects.create(user=self.user, favorite_city='Test City')
+
+        new_favorite_city = 'New City'
+        profile.favorite_city = new_favorite_city
+        profile.save()
+
+        updated_profile = Profile.objects.get(user=self.user)
+
+        self.assertEqual(updated_profile.favorite_city, new_favorite_city)
+
+    def test_delete_profile(self):
+        """Method to test a profile delete."""
+        profile = Profile.objects.create(user=self.user, favorite_city='Test City')
+        profile.delete()
+
+        self.assertEqual(Profile.objects.count(), 0)
 
 
 class TestIndexView(TestCase):
