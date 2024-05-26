@@ -18,12 +18,13 @@ stages:
 cache:
   paths:
     - "$CI_PROJECT_DIR/.cache/pip"
-before_script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
+
 
 compilation:
   stage: build
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
   script:
     - python manage.py makemigrations
     - python manage.py migrate
