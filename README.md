@@ -1,6 +1,5 @@
 <!--suppress HtmlUnknownAnchorTarget, HtmlDeprecatedAttribute -->
 <p align="center">
-  <img src="img/logo_light.png#gh-light-mode-only" alt="logo-light" />
   <img src="img/logo_dark.png#gh-dark-mode-only" alt="logo-dark" />
 </p>
 
