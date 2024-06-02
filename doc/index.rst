@@ -5,6 +5,9 @@
 
 Welcome to Oc Lettings's documentation!
 =======================================
+Orange County Lettings est une application web fictive d'apprentissage.
+Il s'agit d'une application Django permettant de gérer la location de biens immobiliers.
+Cette application fait partie du parcours Développeur Concepteur Python d'OpenClassRooms.
 
 .. toctree::
    :maxdepth: 2

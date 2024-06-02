@@ -1,7 +1,10 @@
 <!--suppress HtmlUnknownAnchorTarget, HtmlDeprecatedAttribute -->
-<p style="text-align:center">
-  <img src="img/logo_light.png#gh-light-mode-only" alt="logo-light" />
-</p>
+<div style="text-align:center">
+   <p>
+      <img src="img/logo_light.png#gh-light-mode-only" alt="logo-light" />
+   </p>
+</div>
+
 
 
 ---
