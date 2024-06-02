@@ -73,14 +73,15 @@ exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel 
 
 <a name="env"></a>
 ## Variables d'environnement : fichier *.env*
-Pour générer un fichier *.env* à compléter, lancer le script `python setup_env.py`.
+Pour générer un fichier *.env* à compléter, créer un fichier .env à la racine du projet.
 
 Exemple de fichier *.env* généré :
 
 ```
-DJANGO_SECRET_KEY=j%yuc7l_wwz5t8d=g)zxh6ol@$7*lwx6n0p)(k$dewlr0hf2u-
-SENTRY_DSN=
-DEBUG=
+DJANGO_SECRET_KEY=`votre clef secrète`
+SENTRY_DSN=`votre sentry dsn`
+DEBUG=True
+ALLOWED_HOSTS=['*']
 ```
 
 Vous pouvez modifier le fichier en ajoutant :
@@ -124,23 +125,3 @@ Vous pouvez modifier le fichier en ajoutant :
 
 - Aller sur http://127.0.0.1:8000/admin/
 - Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
-
-## Docker
-
-### Lancement de l'application en local via la création d'une image Docker
-- Télécharger et installer [Docker](https://docs.docker.com/get-docker/)
-- Naviguer vers le répertoire du projet `cd /path/to/Python-OC-Lettings-FR`
-- Confirmer que le fichier *.env* nécessaire a bien été créé (voir [Variables d'environnement](#env))
-- Créer l'image `docker build -t <image-name> .` avec le nom de votre choix
-- Utiliser la commande `docker run --rm -p 8080:8080 --env-file .env <image-name>`, en remplaçant *image-name* par le nom de l'image créée
-
-Vous pouvez accéder à l'application dans un navigateur via http://127.0.0.1:8080/
-
-
-### Lancement de l'application en local via l'utilisation d'une image sur DockerHub
-- Télécharger et installer [Docker](https://docs.docker.com/get-docker/)
-- Aller sur le repository Docker : https://hub.docker.com/repository/docker/safo92150/oc_lettings/tags
-- Copier le tag de l'image de votre choix (de préférence le plus récent)
-- Utiliser la commande `docker run --rm -p 8080:8080 safo92150/oc_lettings:<image-tag>`, en remplaçant *image-tag* par le tag de l'image souhaitée
-
-Vous pouvez accéder à l'application dans un navigateur via http://127.0.0.1:8080/
