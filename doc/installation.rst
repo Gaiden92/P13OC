@@ -16,23 +16,28 @@ Run in local
 ============
 
 Next, we need to create our local environment:
+
 .. code-block::
     python -m venv venv
 
 Now activate our local environment:
 In Windows:
+
 .. code-block::
     venv/Scripts/activate.bat
 
 In MacOS:
+
 .. code-block::
     venv/bin/activate
 
 First, make an update of pip:
+
 .. code-block::
     python -m pip install --upgrade pip
 
 Second, we need to install all dependances:
+
 .. code-block::
     pip install -r requirements.txt
 
