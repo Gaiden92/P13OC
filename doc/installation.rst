@@ -25,19 +25,23 @@ Now activate our local environment:
 In Windows:
 
 .. code-block::
+
     venv/Scripts/activate.bat
 
 In MacOS:
+
 .. code-block::
 
     venv/bin/activate
 
 First, make an update of pip:
+
 .. code-block::
 
     python -m pip install --upgrade pip
 
 Second, we need to install all dependances:
+
 .. code-block::
 
     pip install -r requirements.txt
@@ -46,6 +50,7 @@ Finally, we must to create a .env files for the configuration settings:
 Create a '.env' files and copy paste this code:
 
 .. code-block::
+
     SECRET_KEY = "yoursecretkey"
     DSN = "your dsn sentry"
     DJANGO_DEBUG = 'True'
