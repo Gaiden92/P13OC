@@ -14,14 +14,16 @@ Type this command on your terminal to clone the project:
 
 Run in local
 ============
+
 Next, we need to create our local environment:
 .. code-block::
     python -m venv venv
 
 Now activate our local environment:
-In Windows:
+For Windows
 .. code-block::
     venv/Scripts/activate.bat
+
 In MacOS:
 .. code-block::
     venv/bin/activate
