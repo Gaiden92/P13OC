@@ -9,7 +9,6 @@ This is a Django application for managing real estate rentals.
 This application is part of the OpenClassRooms Python Developer Designer course.
 .. image:: img/home.png
 
-Users can:
 Create new profiles
 .. image:: img/profiles.png
 
