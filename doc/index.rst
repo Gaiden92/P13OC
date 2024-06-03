@@ -11,7 +11,7 @@ This application is part of the OpenClassRooms Python Developer Designer course.
 
 .. toctree::
    :maxdepth: 2
-   Description
+
 
 
 
