@@ -16,22 +16,21 @@ Quickstart
 
     python manage.py runserver
 
-Make some tests
-===============
+**Make some tests**
+
 
 .. code-block::
 
     python manage.py tests
 
-Verify linting
-==============
+**Verify linting**
+
 
 .. code-block::
 
     flake8
 
-Verify the test coverage and generate a html report
-=========================
+**Verify the test coverage and generate a html report**
 
 .. code-block::
 

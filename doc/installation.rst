@@ -8,7 +8,9 @@ Clone the gitlab repository
 
 **Once your Gitlab account is created. You will first clone the project on your local machine.
 Type this command on your terminal to clone the project:**
+
 .. code-block::
+
     git clone 'https://gitlab.com/sf5810217/oc_lettings.git'
 
 
