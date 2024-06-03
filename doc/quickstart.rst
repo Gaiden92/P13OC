@@ -21,7 +21,7 @@ Quickstart
 
 .. code-block::
 
-    python manage.py tests
+    python manage.py test
 
 **Verify linting**
 
