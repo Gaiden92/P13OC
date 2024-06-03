@@ -18,6 +18,6 @@ This application is part of the OpenClassRooms Python Developer Designer course.
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* :ref:`description`
+* :ref:`installation`
+* :ref:`quickstart`

@@ -2,6 +2,9 @@
 Database
 ========
 
-The principal tables are : users, lettings and profiles.
+The principal tables are : 
+- users
+- lettings
+- profiles
 
 .. image:: img/database-structure.png
