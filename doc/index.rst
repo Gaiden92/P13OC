@@ -4,10 +4,10 @@
    contain the root `toctree` directive.
 
 Welcome to Oc Lettings's documentation!
-=======================================
-Orange County Lettings est une application web fictive d'apprentissage.
-Il s'agit d'une application Django permettant de gérer la location de biens immobiliers.
-Cette application fait partie du parcours Développeur Concepteur Python d'OpenClassRooms.
+========================================
+Orange County Lettings is a fictional learning web application.
+This is a Django application for managing real estate rentals.
+This application is part of the OpenClassRooms Python Developer Designer course.
 
 .. toctree::
    :maxdepth: 2
