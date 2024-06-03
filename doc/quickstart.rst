@@ -2,7 +2,7 @@
 Quickstart
 ==========
 
-Once you clone the repository and files .env create, we need to make the migrations database:
+**Once you clone the repository and files .env create, we need to make the migrations database:**
 
 .. code-block::
  
@@ -10,7 +10,7 @@ Once you clone the repository and files .env create, we need to make the migrati
     python manage.py migrate
     python manage.py check
 
-Launch the application works locally:
+**Launch the application works locally:**
 
 .. code-block::
 
