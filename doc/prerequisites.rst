@@ -1,3 +1,5 @@
+.. _Prerequisites:
+
 ======
 Prerequisites
 ======
@@ -10,3 +12,5 @@ In order to use the application, you will need these prerequisites:
 :Gitlab account: for the pipeline and versionning code
 :DockerHub account: for the packaging
 :Render account: for the deployement
+
+Reference `Prerequisites`_.

@@ -1,3 +1,5 @@
+.. _Database:
+
 ========
 Database
 ========
@@ -8,3 +10,5 @@ The principal tables are :
 - profiles
 
 .. image:: img/database-structure.png
+
+Reference `Database`_.
