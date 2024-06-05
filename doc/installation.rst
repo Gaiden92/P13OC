@@ -5,11 +5,10 @@ Installation
 ============
 
 
-Clone the gitlab repository
-===========================
+Clone the project on your local machine
+=======================================
 
-**Once your Gitlab account is created. You will first clone the project on your local machine.
-Type this command on your terminal to clone the project:**
+**Type this command on your terminal to clone the project:**
 
 .. code-block::
 
@@ -60,5 +59,42 @@ Create a '.env' files and copy paste this code:**
     DSN = "your dsn sentry"
     DJANGO_DEBUG = 'True'
     ALLOWED_HOSTS = ['*']
+
+Quickstart
+==========
+
+**Once you clone the repository and files .env create, we need to make the migrations database:**
+
+.. code-block::
+ 
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py check
+
+**Launch the application works locally:**
+
+.. code-block::
+
+    python manage.py runserver
+
+**Do some tests**
+
+
+.. code-block::
+
+    python manage.py test
+
+**Verify linting**
+
+
+.. code-block::
+
+    flake8
+
+**Verify the test coverage and generate a html report**
+
+.. code-block::
+
+    pytest --cov=. --cov-report html
 
 Reference `Installation`_.
