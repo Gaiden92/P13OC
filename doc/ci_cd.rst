@@ -1,3 +1,5 @@
+.. _CI/CD:
+
 ===================================
 Set up a ci cd pipeline with Gitlab
 ===================================
@@ -30,3 +32,4 @@ On the general parameters, go to visibility and put settings like on this image:
 
 .. image:: img/visibility.png
 
+Reference `Ci/CD`_.

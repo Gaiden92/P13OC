@@ -24,4 +24,5 @@ Indices and tables
 * :ref:`Quickstart`
 * :ref:`Database`
 * :ref:`Gitlab`
+* :ref:`CI/CD`
 
