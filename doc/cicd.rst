@@ -27,15 +27,15 @@ Gitlab
 
 .. figure:: img/variables.png
 
-    **Go to the tab Parameters, CI/CD, variables and click on display**
+    Go to the tab Parameters, CI/CD, variables and click on display
 
 .. figure:: img/all-variables.png
 
-    **Complete these variables with your data**
+    Complete these variables with your data
 
 .. figure:: img/django-debug.png
 
-    **For DJANGO_DEBUG variable put at `True`**
+    For DJANGO_DEBUG variable put at `True`
 
 For:
 * DEPLOY_HOOK_1
@@ -48,4 +48,4 @@ On the general parameters, go to visibility and put settings like on this image:
 
 .. image:: img/visibility.png
 
-Reference `Ci/CD`_.
+Reference `CI/CD`_.
