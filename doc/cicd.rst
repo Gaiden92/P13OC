@@ -35,12 +35,13 @@ Gitlab
 
 .. figure:: img/django-debug.png
 
-    For DJANGO_DEBUG variable put at `True`
+    For DJANGO_DEBUG variable put at `False`
 
-For:
-* DEPLOY_HOOK_1
-* DEPLOY_HOOK_2
-* RENDER_API_TOKEN
+For these variables:
+
++ DEPLOY_HOOK_1
++ DEPLOY_HOOK_2
++ RENDER_API_TOKEN
 
 **You will see later, when you will setup the deployement.**
 
