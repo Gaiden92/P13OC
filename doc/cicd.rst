@@ -1,8 +1,8 @@
 .. _CI/CD:
 
-===================================
-Set up a ci cd pipeline with Gitlab
-===================================
+=====================
+Set up CI/CD pipeline
+=====================
 
 
 Gitlab
@@ -26,12 +26,15 @@ Gitlab
     git push origin main
 
 .. figure:: img/variables.png
+
     **Go to the tab Parameters, CI/CD, variables and click on display**
 
 .. figure:: img/all-variables.png
+
     **Complete these variables with your data**
 
 .. figure:: img/django-debug.png
+
     **For DJANGO_DEBUG variable put at `True`**
 
 For:
