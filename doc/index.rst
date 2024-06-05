@@ -21,8 +21,6 @@ Indices and tables
 * :ref:`Description`
 * :ref:`Prerequisites`
 * :ref:`Installation`
-* :ref:`Quickstart`
 * :ref:`Database`
-* :ref:`Gitlab`
 * :ref:`CI/CD`
 
