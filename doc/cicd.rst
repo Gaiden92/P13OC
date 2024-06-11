@@ -63,7 +63,7 @@ Add `:latest` to select the latest image:
 
 .. image:: img/image-select.png
 
-Third, complete the informations (you can just change the name of the project for now)
+Third, complete the information (you can just change the name of the project for now)
 
 **We need to add 2 variables:**
 
