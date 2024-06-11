@@ -64,8 +64,9 @@ Add `:latest` to select the latest image:
 
 .. image:: img/image-select.png
 
-Third, complete the information (you can just change the name of the project fot now)
-We need to add 2 variables:
+Third, complete the informations (you can just change the name of the project for now)
+
+**We need to add 2 variables:**
 
 * key = DJANGO_DEBUG, value = 0
 * key = SECRET_KEY, clique on `generate`
@@ -80,8 +81,8 @@ Go on **settings**, and copy the **deploy hook**:
 
 .. image:: img/deploy-hook.png
 
-The deploy hook go 2 values that we need: just after `https://api.render.com/deploy/srv-`
-this is the DEPLOY_HOOK_1, and after `?key=` this is the DEPLOY_HOOK_2
+The deploy hook got 2 values that we need: just after "https://api.render.com/deploy/srv-"
+this is the DEPLOY_HOOK_1, and after "?key=" this is the DEPLOY_HOOK_2
 
 So for example :
 `https://api.render.com/deploy/srv-cd45454fd?key=rzacZY4tgh`
@@ -89,12 +90,12 @@ So for example :
 DEPLOY_HOOK_1 = cd45454fd
 DEPLOY_HOOK_2 = rzacZY4tgh
 
-Now go back to your Gitlab account and go to the ci/cd parameters.
+Now go back to your Gitlab account and go to the CI/CD parameters.
 Add these 2 variables : 
 
 * DEPLOY_HOOK_1 = the value deploy-hook after `srv-`
 * DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
 
-Launch a pipeline and you will see the trigger deployement on **Render** !
+Launch a pipeline to test and you will see that the deployement on **Render** success !
 
 Reference `CI-CD`_.
