@@ -22,5 +22,5 @@ Indices and tables
 * :ref:`Prerequisites`
 * :ref:`Installation`
 * :ref:`Database`
-* :ref:`CI/CD`
+* :ref:`CI-CD`
 

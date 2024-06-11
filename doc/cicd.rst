@@ -1,4 +1,4 @@
-.. _CI/CD:
+.. _CI-CD:
 
 =====================
 Set up CI/CD pipeline
@@ -49,4 +49,4 @@ On the general parameters, go to visibility and put settings like on this image:
 
 .. image:: img/visibility.png
 
-Reference `CI/CD`_.
+Reference `CI-CD`_.

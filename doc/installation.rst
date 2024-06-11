@@ -60,6 +60,19 @@ Create a '.env' files and copy paste this code:**
     DJANGO_DEBUG = 'True'
     ALLOWED_HOSTS = ['*']
 
+**The secret key is a component essential for the security of your django application. She's use by Django
+for:**
+
+* cryptographic signatures
+* password hashing
+* injection protection
+
+**The Sentry DSN is an url to allows the application to send events to your Sentry instance:**
+
+* error
+* exceptions
+* messages
+
 Quickstart
 ==========
 
@@ -79,7 +92,6 @@ Quickstart
 
 **Do some tests**
 
-
 .. code-block::
 
     python manage.py test
@@ -96,5 +108,22 @@ Quickstart
 .. code-block::
 
     pytest --cov=. --cov-report html
+
+
+Admin dashboard
+===============
+
+**To access to the admin dashboard, http://127.0.0.1:8000/admin/**
+
+.. image:: img/admin.png
+
+**To log enter `admin`as username and `Abc1234!` as password**
+
+.. image:: img/login.png
+
+**You are now on your dashboard and you can easily manage your data**
+
+.. image:: img/login.png
+
 
 Reference `Installation`_.
