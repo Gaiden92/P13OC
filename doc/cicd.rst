@@ -72,7 +72,7 @@ Third, complete the informations (you can just change the name of the project fo
 
 .. image:: img/render-variables.png
 
-Click on **Save change**
+Click on **Save changes**
 
 Finally, we need to get the deploy hook for **Gitlab**.
 
