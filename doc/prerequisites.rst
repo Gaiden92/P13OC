@@ -1,8 +1,8 @@
 .. _Prerequisites:
 
-======
-Prerequisite
-======
+=============
+Prerequisites
+=============
 
 In order to use the application, you will need these prerequisites:
 
