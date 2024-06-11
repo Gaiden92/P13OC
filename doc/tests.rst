@@ -1,3 +1,5 @@
+.. _Tests:
+
 =====
 Tests
 =====
@@ -14,17 +16,17 @@ Tests
 
     python manage.py test lettings
 
-**For see the coverage tests of your application: **
+**For see the coverage tests of your application:**
 
 .. code-block::
 
     pytest --cov=.
 
-**You can see in the shell the test coverage: **
+**You can see in the shell the test coverage:**
 
 .. image:: img/coverage-shell.png
 
-**You can generate an html report with the option coverage-report: **
+**You can generate an html report with the option coverage-report:**
 
 .. code-block::
 
@@ -34,3 +36,4 @@ Tests
 
 .. image:: img/coverage-html.png
 
+Reference `Tests`_.

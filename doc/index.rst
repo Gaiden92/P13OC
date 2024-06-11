@@ -20,7 +20,9 @@ Indices and tables
 
 * :ref:`Description`
 * :ref:`Prerequisites`
+* :ref:`Technologies`
 * :ref:`Installation`
+* :ref:`Tests`
 * :ref:`Database`
 * :ref:`CI-CD`
 

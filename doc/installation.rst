@@ -117,7 +117,9 @@ Admin dashboard
 
 .. image:: img/admin.png
 
-**To log enter `admin`as username and `Abc1234!` as password**
+To log:
+username: **admin**
+password: **Abc1234!** 
 
 .. image:: img/login.png
 
