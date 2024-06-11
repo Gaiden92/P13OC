@@ -1,15 +1,15 @@
 .. _Prerequisites:
 
 ======
-Prerequisites
+Prerequisite
 ======
 
 In order to use the application, you will need these prerequisites:
 
-**Python** install on your pc for launch the command.
-**Sentry** account to log the application
-**Gitlab** account to setup the CI/CD pipeline and code versionning
-**DockerHub** account to package the application
-**Render** account to deploy the application
+1. **Python** install on your pc for launch the command.
+2. **Sentry** account to log the application
+3. **Gitlab** account to setup the CI/CD pipeline and code versionning
+4. **DockerHub** account to package the application
+4. **Render** account to deploy the application
 
 Reference `Prerequisites`_.
