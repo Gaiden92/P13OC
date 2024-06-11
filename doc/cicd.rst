@@ -41,7 +41,6 @@ For these variables:
 
 + DEPLOY_HOOK_1
 + DEPLOY_HOOK_2
-+ RENDER_API_TOKEN
 
 **You will see later, when you will setup the deployement.**
 
@@ -81,8 +80,8 @@ Go on **settings**, and copy the **deploy hook**:
 
 .. image:: img/deploy-hook.png
 
-The deploy hook got 2 values that we need: just after "https://api.render.com/deploy/srv-"
-this is the DEPLOY_HOOK_1, and after "?key=" this is the DEPLOY_HOOK_2
+The deploy hook got 2 values that we need: just after `https://api.render.com/deploy/srv-`
+this is the DEPLOY_HOOK_1, and after `?key=` this is the DEPLOY_HOOK_2
 
 So for example :
 `https://api.render.com/deploy/srv-cd45454fd?key=rzacZY4tgh`
