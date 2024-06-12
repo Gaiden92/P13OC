@@ -11,9 +11,16 @@ This application is part of the OpenClassRooms Python Developer Designer course.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contenu
 
-
-
+   Description
+   Prerequisites
+   Technologies
+   Installation
+   Tests
+   Database
+   Docker
+   CI-CD
 
 Indices and tables
 ==================
