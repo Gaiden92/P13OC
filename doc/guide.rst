@@ -45,3 +45,5 @@ User go on website and search for a profile
 .. image:: img/user-profile.png
     :align: center
     :width: 400px
+
+Reference `Guide`_.

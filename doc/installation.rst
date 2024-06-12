@@ -126,3 +126,5 @@ password: **Abc1234!**
 **You are now on your dashboard and you can easily manage your data**
 
 .. image:: img/dashboard.png
+
+Reference `Installation`_.

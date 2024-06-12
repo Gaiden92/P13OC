@@ -78,3 +78,5 @@ Linting
 
 .. image:: img/setup-cfg-flake.png
     :align: center
+
+Reference `Tests`_.
