@@ -18,7 +18,7 @@ This application is part of the OpenClassRooms Python Developer Designer course.
    Technologies
    Installation
    Tests
-   User guide
+   Guide
    Database
    Docker
    CI-CD
