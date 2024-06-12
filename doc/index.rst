@@ -25,17 +25,19 @@ This application is part of the OpenClassRooms Python Developer Designer course.
 Indices and tables
 ==================
 
-*:ref:`Description`
+:ref:`Description`
 
-*:ref:`Prerequisites`
+:ref:`Prerequisites`
 
-*:ref:`Technologies`
+:ref:`Technologies`
 
-*:ref:`Installation`
+:ref:`Installation`
 
-*:ref:`Tests`
+:ref:`Tests`
 
-*:ref:`Database`
+:ref:`Database`
 
-*:ref:`CI-CD`
+:ref:`Docker`
+
+:ref:`CI-CD`
 
