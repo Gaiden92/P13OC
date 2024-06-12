@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CI/CD &mdash; Oc Lettings 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Oc Lettings
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">CI/CD</a><ul>
+<li><a class="reference internal" href="#gitlab">Gitlab</a></li>
+<li><a class="reference internal" href="#render">Render</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Oc Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CI/CD</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cicd.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ci-cd">
+<span id="id1"></span><h1>CI/CD<a class="headerlink" href="#ci-cd" title="Link to this heading"></a></h1>
+<p><strong>This page will help you to setup a CI/CD pipeline with Gitlab and Render.</strong></p>
+<section id="gitlab">
+<h2>Gitlab<a class="headerlink" href="#gitlab" title="Link to this heading"></a></h2>
+<p><strong>Now, create a new repository on your Gitlab account:</strong></p>
+<img alt="_images/gitlab-repo.png" src="_images/gitlab-repo.png" />
+<img alt="_images/create-project.png" src="_images/create-project.png" />
+<p><strong>Complete the informations and put the visibility in “public”:</strong></p>
+<img alt="_images/settings-repo.png" src="_images/settings-repo.png" />
+<p><strong>Next we will push the project from your local machine to your new repository:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="s2">&quot;your https url repository&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id2">
+<img alt="_images/variables.png" src="_images/variables.png" />
+<figcaption>
+<p><span class="caption-text">Go to the tab Parameters, CI/CD, variables and click on display</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="_images/all-variables.png" src="_images/all-variables.png" />
+<figcaption>
+<p><span class="caption-text">Complete these variables with your data</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="_images/django-debug.png" src="_images/django-debug.png" />
+<figcaption>
+<p><span class="caption-text">For DJANGO_DEBUG variable put at <cite>False</cite></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For these variables:</p>
+<ul class="simple">
+<li><p>DEPLOY_HOOK_1</p></li>
+<li><p>DEPLOY_HOOK_2</p></li>
+</ul>
+<p><strong>You will see later, when you will setup the deployement.</strong></p>
+<p>On the general parameters, go to visibility and put settings like on this image:</p>
+<img alt="_images/visibility.png" src="_images/visibility.png" />
+</section>
+<section id="render">
+<h2>Render<a class="headerlink" href="#render" title="Link to this heading"></a></h2>
+<p>Once, youre create your <strong>Render</strong> account, you need to setup for the deployement:</p>
+<p>First, click on <cite>New Web Service</cite>:</p>
+<img alt="_images/render-dashboard.png" src="_images/render-dashboard.png" />
+<p>Second, click on <cite>Existing image</cite> and select the repo from your Docker Hub.
+Add <cite>:latest</cite> to select the latest image:</p>
+<img alt="_images/image-select.png" src="_images/image-select.png" />
+<p>Third, complete the informations (you can just change the name of the project for now)</p>
+<p><strong>We need to add 2 variables:</strong></p>
+<ul class="simple">
+<li><p>key = DJANGO_DEBUG, value = 0</p></li>
+<li><p>key = SECRET_KEY, clique on <cite>generate</cite></p></li>
+</ul>
+<img alt="_images/render-variables.png" src="_images/render-variables.png" />
+<p>Click on <strong>Save changes</strong></p>
+<p>Finally, we need to get the deploy hook for <strong>Gitlab</strong>.</p>
+<p>Go on <strong>settings</strong>, and copy the <strong>deploy hook</strong>:</p>
+<img alt="_images/deploy-hook.png" src="_images/deploy-hook.png" />
+<p>The deploy hook got 2 values that we need: just after <cite>https://api.render.com/deploy/srv-</cite>
+this is the DEPLOY_HOOK_1, and after <cite>?key=</cite> this is the DEPLOY_HOOK_2</p>
+<p>So for example :
+<cite>https://api.render.com/deploy/srv-cd45454fd?key=rzacZY4tgh</cite></p>
+<p>DEPLOY_HOOK_1 = cd45454fd
+DEPLOY_HOOK_2 = rzacZY4tgh</p>
+<p>Now go back to your Gitlab account and go to the CI/CD parameters.
+Add these 2 variables :</p>
+<ul class="simple">
+<li><p>DEPLOY_HOOK_1 = the value deploy-hook after <cite>srv-</cite></p></li>
+<li><p>DEPLOY_HOOK_2 =  the value of your deploy-hook <cite>?key=</cite></p></li>
+</ul>
+<p>Launch a pipeline to test and you will see that the deployement on <strong>Render</strong> success !</p>
+<p>Reference <a class="reference internal" href="#ci-cd">CI-CD</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fouchal Sami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

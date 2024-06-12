@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tests and linting &mdash; Oc Lettings 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Oc Lettings
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Tests and linting</a><ul>
+<li><a class="reference internal" href="#linting">Linting</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Oc Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tests and linting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests-and-linting">
+<span id="tests"></span><h1>Tests and linting<a class="headerlink" href="#tests-and-linting" title="Link to this heading"></a></h1>
+<p><strong>You can run the tests of the application by launch the command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p><strong>You will see the number of test execute in the shell</strong></p>
+<img alt="_images/tests-shell.png" class="align-center" src="_images/tests-shell.png" />
+<p><strong>Or you can select a test by add the directory:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="n">lettings</span>
+</pre></div>
+</div>
+<p><strong>For see the coverage tests of your application:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">cov</span><span class="o">=.</span>
+</pre></div>
+</div>
+<p><strong>You can see in the shell the test coverage:</strong></p>
+<img alt="_images/coverage-shell.png" src="_images/coverage-shell.png" />
+<p><strong>You can generate an html report with the option coverage-report:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">cov</span><span class="o">=.</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p><strong>This will be create a directory `htmlcov`. Go on this directory and click on index.html to see the report on your browser:</strong></p>
+<img alt="_images/coverage-html.png" src="_images/coverage-html.png" />
+<p><strong>For the coverage test, we decided to omit some directory optional.
+But if for any reasons, you want to add some others files you can change de files “setup.cfg”.</strong></p>
+<p><strong>You can add/remove a file or a directory of your choices:</strong></p>
+<img alt="_images/setup-cfg.png" class="align-center" src="_images/setup-cfg.png" />
+<section id="linting">
+<h2>Linting<a class="headerlink" href="#linting" title="Link to this heading"></a></h2>
+<p><strong>You can see if the code respect the</strong> <a class="reference external" href="https://peps.python.org/pep-0008/">Pep8 convention</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flake8</span>
+</pre></div>
+</div>
+<p><strong>You can generate a html report via this command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flake8</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">html</span> <span class="o">--</span><span class="n">htmldir</span><span class="o">=</span><span class="n">flake</span><span class="o">-</span><span class="n">report</span>
+</pre></div>
+</div>
+<p><strong>“flake-report” is the name of the directory where you want that the report will be generate.</strong></p>
+<p><strong>Go on the directory and open “index.html”</strong></p>
+<img alt="_images/flake8.png" class="align-center" src="_images/flake8.png" />
+<p><strong>Like for coverage report, you can change the linting configuration in the setup-cfg file.</strong></p>
+<p><strong>You can add/remove a file or a directory of your choices. You can also add/remove rules:</strong></p>
+<img alt="_images/setup-cfg-flake.png" class="align-center" src="_images/setup-cfg-flake.png" />
+<p>Reference <a class="reference internal" href="#tests">Tests</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fouchal Sami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
