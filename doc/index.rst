@@ -29,8 +29,6 @@ Indices and tables
 
 :ref:`Prerequisites`
 
-:ref:`Technologies`
-
 :ref:`Installation`
 
 :ref:`Tests`
