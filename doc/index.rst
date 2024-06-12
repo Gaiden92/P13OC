@@ -34,6 +34,8 @@ Indices and tables
 
 :ref:`Tests`
 
+:ref:`Guide`
+
 :ref:`Database`
 
 :ref:`Docker`
