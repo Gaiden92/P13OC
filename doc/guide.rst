@@ -19,7 +19,7 @@ User go on website and search for a letting
     :align: center
     :width: 400px
 
-**The user is on letting page and can see details about the select letting.**
+**The user is on letting page and can see details about the selected letting.**
 
 .. image:: img/user-letting.png
     :align: center
@@ -40,7 +40,7 @@ User go on website and search for a profile
     :align: center
     :width: 400px
 
-**The user is on profile page and can see details about the select profile.**
+**The user is on profile page and can see details about the selected profile.**
 
 .. image:: img/user-profile.png
     :align: center

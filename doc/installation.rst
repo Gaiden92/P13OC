@@ -113,7 +113,7 @@ Quickstart
 Admin dashboard
 ===============
 
-**To access to the admin dashboard, http://127.0.0.1:8000/admin/**
+**To access to the admin dashboard, go on admin login : http://127.0.0.1:8000/admin/**
 
 .. image:: img/admin.png
 
@@ -125,7 +125,4 @@ password: **Abc1234!**
 
 **You are now on your dashboard and you can easily manage your data**
 
-.. image:: img/login.png
-
-
-Reference `Installation`_.
+.. image:: img/dashboard.png

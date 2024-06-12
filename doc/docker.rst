@@ -6,12 +6,14 @@ Docker
 
 For packaging the application is very simple. You need to have a DockerHub account.
 
-First you need to download and install Docker Dekstop on the `Docker website <https://www.docker.com/products/docker-desktop/>`_
+First you need to download and install **Docker Dekstop** on the `Docker website <https://www.docker.com/products/docker-desktop/>`_
 
-Second, sign up a DockerHub account at `DockerHub <https://hub.docker.com/>`_
+Second, sign up a **DockerHub** account at `DockerHub <https://hub.docker.com/>`_
 
-Now for build an image and push to DockerHub: open a terminal at the root of the project.
-You need to connect to DockerHub:
+Now for build an image and push to DockerHub: 
+**open a terminal at the root of the project**
+
+**You need to connect to DockerHub:**
 
 .. code-block::
 
@@ -35,4 +37,3 @@ If you want to run the app locally:
 
     docker run -p "port to map":8000 "your dockerhub username"/"your image name"
 
-Reference `Docker`_.

@@ -12,7 +12,7 @@ Tests and linting
 
 **You will see the number of test execute in the shell**
 
-.. image:: img/coverage-shell.png
+.. image:: img/tests-shell.png
     :align: center
 
 **Or you can select a test by add the directory:**
@@ -37,14 +37,14 @@ Tests and linting
 
     pytest --cov=. --cov-report html
 
-**This will be create a directory `htmlcov`. Go on this directory and click on index.html to see the report:**
+**This will be create a directory `htmlcov`. Go on this directory and click on index.html to see the report on your browser:**
 
 .. image:: img/coverage-html.png
 
 **For the coverage test, we decided to omit some directory optional.
 But if for any reasons, you want to add some others files you can change de files "setup.cfg".**
 
-**You can add or remove a file or a directory of your choices:**
+**You can add/remove a file or a directory of your choices:**
 
 .. image:: img/setup-cfg.png
     :align: center
@@ -53,7 +53,7 @@ But if for any reasons, you want to add some others files you can change de file
 Linting
 =======
 
-**You can see if the code respect the `Pep8 convention <https://peps.python.org/pep-0008/>`_**
+**You can see if the code respect the** `Pep8 convention <https://peps.python.org/pep-0008/>`_
 
 .. code-block::
 
@@ -78,5 +78,3 @@ Linting
 
 .. image:: img/setup-cfg-flake.png
     :align: center
-
-Reference `Tests`_.

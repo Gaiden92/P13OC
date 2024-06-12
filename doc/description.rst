@@ -5,6 +5,7 @@ Project description
 ===================
 
 .. image:: img/logo.png
+
     :align: center
 
 Orange County Lettings is a fictional learning web application.
@@ -15,5 +16,9 @@ This is a Django application for managing real estate rentals.
 .. image:: img/home.png
     :align: center
     :width: 400px
+
+**In this app, you can see the lettings and the profiles of lettings author of the website.**
+
+**You can create your profile and add a letting easily**
 
 Reference `Description`_.
