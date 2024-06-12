@@ -1,9 +1,10 @@
 .. _CI-CD:
 
-=====================
-Set up CI/CD pipeline
-=====================
+======
+CI/CD
+======
 
+**This page will help you to setup a CI/CD pipeline with Gitlab and Render.**
 
 Gitlab
 ======
