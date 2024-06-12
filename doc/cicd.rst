@@ -65,7 +65,7 @@ Add `:latest` to select the latest image:
 
 Third, complete the informations (you can just change the name of the project for now)
 
-**We need to add 2 variable:**
+**We need to add 2 variables:**
 
 * key = DJANGO_DEBUG, value = 0
 * key = SECRET_KEY, clique on `generate`

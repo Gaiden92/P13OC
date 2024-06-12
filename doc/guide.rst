@@ -1,9 +1,47 @@
-Create new profiles
-===================
+.. _Guides:
 
-.. image:: img/profile.png
+=====
+Guide
+=====
 
-Publish apartments or house for rent.
-====================================
+User go on website and search for a letting
+==============================================
 
-.. image:: img/lettings.png
+**The user go on homepage and click on "lettings" button.**
+
+.. image:: img/user-home.png
+    :align: center
+    :width: 400px
+
+**The user is on lettings page and can see all the lettings and select one of them.**
+
+.. image:: img/user-lettings.png
+    :align: center
+    :width: 400px
+
+**The user is on letting page and can see details about the select letting.**
+
+.. image:: img/user-letting.png
+    :align: center
+    :width: 400px
+
+User go on website and search for a profile
+===========================================
+
+**The user go on homepage and click on "profiles" button.**
+
+.. image:: img/user-home.png
+    :align: center
+    :width: 400px
+
+**The user is on profiles page and can see all the profiles and select one of them.**
+
+.. image:: img/user-profiles.png
+    :align: center
+    :width: 400px
+
+**The user is on profile page and can see details about the select profile.**
+
+.. image:: img/user-profile.png
+    :align: center
+    :width: 400px
