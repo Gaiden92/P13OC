@@ -5,9 +5,16 @@
 
 Welcome to Oc Lettings's documentation!
 ========================================
+
+.. image:: img/logo.png
+   :align: center
+   :width: 400px
+
 Orange County Lettings is a fictional learning web application.
+
 This is a Django application for managing real estate rentals.
-This application is part of the OpenClassRooms Python Developer Designer course.
+
+This application is the last project of the OpenClassRooms Python Developer Designer course.
 
 .. toctree::
    :maxdepth: 2
@@ -41,4 +48,3 @@ Indices and tables
 :ref:`Docker`
 
 :ref:`CI-CD`
-

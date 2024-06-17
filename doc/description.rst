@@ -17,8 +17,8 @@ This is a Django application for managing real estate rentals.
     :align: center
     :width: 400px
 
-**In this app, you can see the lettings and the profiles of lettings author of the website.**
+**In this application, you can see the lettings and the profiles of lettings author of the website.**
 
-**You can create your profile and add a letting easily**
+**An administrator can create, remove and delete easily a profile/letting in his dashboard.**
 
 Reference `Description`_.

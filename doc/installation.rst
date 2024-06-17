@@ -5,8 +5,8 @@ Installation
 ============
 
 
-Clone the project on your local machine
-=======================================
+From gitlab repository
+======================
 
 **Type this command on your terminal to clone the project:**
 
