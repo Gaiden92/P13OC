@@ -4,12 +4,40 @@
 CI/CD
 ======
 
-**This page will help you to setup a CI/CD pipeline with Gitlab and Render.**
+**This page will help you to setup a CI/CD pipeline with Gitlab and Render.
+The pipeline is triggered when a commit is made to the main branch on the Gitlab repository.**
+
+it is made up of 6 steps: 
+* building
+* linting
+* testing
+* test coverage
+* packaging
+* deployment
+
+.. figure:: img/pipeline.png
+    :align: center
+
+    **The total pipeline duration is approximately 5 minutes**
+
+
+
+Requirements
+============
+
+In order to use the application, you will need these prerequisites:
+
+1. **Python** install on your pc for launch the command.
+2. **Sentry** account to log the application.
+3. **Gitlab** account to setup the CI/CD pipeline and code versionning.
+4. **DockerHub** account to package the application.
+5. **Render** account to deploy the application.
+
 
 Gitlab
 ======
 
-**Now, create a new repository on your Gitlab account:**
+**Create a new repository on your Gitlab account:**
 
 .. image:: img/gitlab-repo.png
 
@@ -96,6 +124,10 @@ Add these 2 variables :
 * DEPLOY_HOOK_1 = the value deploy-hook after `srv-`
 * DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
 
-Launch a pipeline to test and you will see that the deployement on **Render** success !
+.. figure:: img/render-success.png
+    :align: center
+
+    Launch a pipeline to test and you will see that the deployement on **Render** success !
+
 
 Reference `CI-CD`_.

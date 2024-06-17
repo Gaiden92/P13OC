@@ -1,25 +1,10 @@
-.. _Prerequisites:
+.. _Technologies:
 
-=============
-Prerequisites
-=============
-
-Requirements
-============
-
-In order to use the application, you will need these prerequisites:
-
-1. **Python** install on your pc for launch the command.
-2. **Sentry** account to log the application.
-3. **Gitlab** account to setup the CI/CD pipeline and code versionning.
-4. **DockerHub** account to package the application.
-5. **Render** account to deploy the application.
-
-
+========
 Packages
-============
+========
 
-The mains packages and programming interfaces:
+The mains packages:
 
 +---------------+---------+
 | Package       | Version |
@@ -27,6 +12,8 @@ The mains packages and programming interfaces:
 | Python        | 3.11    |
 +---------------+---------+
 | Django        | 3.0     |
++---------------+---------+
+| Coverage      | 7.4.4   |
 +---------------+---------+
 | Flake8        | 3.7.0   |
 +---------------+---------+
@@ -38,7 +25,9 @@ The mains packages and programming interfaces:
 +---------------+---------+
 | Sentry-sdk    | 1.45.0  |
 +---------------+---------+
+| SQLlite       | 3.46.0  |
++---------------+---------+
 | Sphinx        | 7.3.7   |
 +---------------+---------+
 
-Reference `Prerequisites`_.
+Reference `Technologies`_.
