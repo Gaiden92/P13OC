@@ -73,6 +73,23 @@ for:**
 * exceptions
 * messages
 
+Quickstart
+==========
+
+**Once you clone the repository and files .env create, we need to make the migrations database:**
+
+.. code-block::
+ 
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py check
+
+**Launch the application works locally:**
+
+.. code-block::
+
+    python manage.py runserver
+
 Build a Docker image to run the application locally
 ===========================================
 
@@ -98,23 +115,6 @@ From a DockerHub image
 4. Use docker run --rm -p 8080:8000 --env-file .env safo92150/oc_lettings:<image-tag> command, replacing image-tag with the desired tag
 
 You can access the application in any web browser at http://127.0.0.1:8080/
-
-Quickstart
-==========
-
-**Once you clone the repository and files .env create, we need to make the migrations database:**
-
-.. code-block::
- 
-    python manage.py makemigrations
-    python manage.py migrate
-    python manage.py check
-
-**Launch the application works locally:**
-
-.. code-block::
-
-    python manage.py runserver
 
 **Do some tests**
 

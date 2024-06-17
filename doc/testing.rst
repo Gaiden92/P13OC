@@ -1,7 +1,7 @@
-.. _Tests:
+.. _Testing:
 
 =================
-Tests and linting
+Testing and linting
 =================
 
 **You can run the tests of the application by launch the command:**
@@ -80,4 +80,4 @@ Linting
 .. image:: img/setup-cfg-flake.png
     :align: center
 
-Reference `Tests`_.
+Reference `Testing`_.

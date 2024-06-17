@@ -24,7 +24,7 @@ This application is the last project of the OpenClassRooms Python Developer Desi
    Prerequisites
    Technologies
    Installation
-   Tests
+   Testing
    Guide
    Database
    Docker
@@ -39,7 +39,7 @@ Indices and tables
 
 :ref:`Installation`
 
-:ref:`Tests`
+:ref:`Testing`
 
 :ref:`Guide`
 
