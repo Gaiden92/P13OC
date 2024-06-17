@@ -15,7 +15,6 @@ This is a Django application for managing real estate rentals.
 
 .. image:: img/home.png
     :align: center
-    :width: 400px
 
 **In this application, you can see the lettings and the profiles of lettings author of the website.**
 
