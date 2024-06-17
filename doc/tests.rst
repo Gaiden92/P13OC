@@ -42,7 +42,7 @@ Tests and linting
 .. image:: img/coverage-html.png
 
 **For the coverage test, we decided to omit some directory optional.
-But if for any reasons, you want to add some others files you can change de files "setup.cfg".**
+But if for any reasons, you want to add some others files you can change the files "setup.cfg".**
 
 **You can add/remove a file or a directory of your choices:**
 
@@ -71,6 +71,7 @@ Linting
 
 .. image:: img/flake8.png
     :align: center
+
 
 **Like for coverage report, you can change the linting configuration in the setup-cfg file.**
 
