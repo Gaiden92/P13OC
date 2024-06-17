@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 load_dotenv()
 
 # Initialization of Sentry
-DSN = os.getenv('DSN')
+DSN = os.getenv('SENTRY_DSN')
 sentry_sdk.init(
     dsn=DSN,
     enable_tracing=True,
