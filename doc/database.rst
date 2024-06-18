@@ -4,7 +4,10 @@
 Database
 ========
 
-**The database contains 4 main tables:**
+
+**The application use a SQLlite database for the data**
+
+**This database contains 4 main tables:**
 
 1. auth_user
 2. lettings_letting

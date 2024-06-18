@@ -8,7 +8,7 @@ Installation
 From a Gitlab repository
 ======================
 
-**Type this command on your terminal to clone the project:**
+**Open a shell and type this command on your terminal to clone the project:**
 
 .. code-block::
 
@@ -73,10 +73,8 @@ for:**
 * exceptions
 * messages
 
-Quickstart
-==========
 
-**Once you clone the repository and files .env create, we need to make the migrations database:**
+**Once you clone the repository and file .env create, we need to make the migrations database:**
 
 .. code-block::
  
@@ -90,10 +88,14 @@ Quickstart
 
     python manage.py runserver
 
-Build a Docker image to run the application locally
-===========================================
 
-**Download and install Docker**
+You can now access to the application in any web browser at http://127.0.0.1:8080/
+
+
+Build a Docker image to run the application locally
+===================================================
+
+**Download and install Docker Dekstop**
 
 Change to the project directory cd /path/to/OC_LETTINGS
 
@@ -115,6 +117,11 @@ From a DockerHub image
 4. Use docker run --rm -p 8080:8000 --env-file .env safo92150/oc_lettings:<image-tag> command, replacing image-tag with the desired tag
 
 You can access the application in any web browser at http://127.0.0.1:8080/
+
+
+Quickstart
+==========
+
 
 **Do some tests**
 
@@ -144,8 +151,9 @@ Admin dashboard
 .. image:: img/admin.png
 
 To log:
-* username: **admin**
-* password: **Abc1234!** 
+
+* username: admin
+* password: Abc1234! 
 
 .. image:: img/login.png
     :align: center

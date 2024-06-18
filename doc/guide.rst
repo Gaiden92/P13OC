@@ -1,8 +1,8 @@
-.. _Guide:
+.. _User guide:
 
-=====
-Guide
-=====
+==========
+User Guide
+==========
 
 User go on website and search for a letting
 ==============================================
@@ -55,4 +55,4 @@ User go on website and search for a profile
     **The user is on profile page and can see details about the selected profile.**
 
 
-Reference `Guide`_.
+Reference `User guide`_.

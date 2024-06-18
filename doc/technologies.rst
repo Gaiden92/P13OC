@@ -4,7 +4,7 @@
 Packages
 ========
 
-The mains packages:
+The mains packages of the application:
 
 +---------------+---------+
 | Package       | Version |
