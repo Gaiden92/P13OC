@@ -17,7 +17,6 @@ it is made up of 6 steps:
 * deployment
 
 .. figure:: img/pipeline.png
-    :align: center
 
     **The total pipeline duration is approximately 5 minutes**
 
@@ -40,7 +39,7 @@ Gitlab
 **Create a new repository on your Gitlab account:**
 
 .. image:: img/gitlab-repo.png
-
+    :align: center
 
 **Complete the informations and put the visibility in "public":**
 
@@ -109,6 +108,7 @@ Add `:latest` to select the latest image:
 Third, complete the informations (you can just change the name of the project for now)
 
 **We need to add 2 variables:**
+
 + key = DJANGO_DEBUG, value = 0
 + key = SECRET_KEY, clique on `generate`
 
@@ -132,7 +132,8 @@ So for example :
 + DEPLOY_HOOK_2 = rzacZY4tgh
 
 Now go back to your Gitlab account and go to the CI/CD parameters.
-Add these 2 variables : 
+Add these 2 variables :
+
 + DEPLOY_HOOK_1 = the value deploy-hook after `srv-`
 + DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
 
