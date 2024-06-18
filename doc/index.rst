@@ -35,7 +35,7 @@ Indices and tables
 
 :ref:`Description`
 
-:ref:`Prerequisites`
+:ref:`Technologies`
 
 :ref:`Installation`
 

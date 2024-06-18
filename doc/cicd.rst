@@ -7,7 +7,8 @@ CI/CD
 **This page will help you to setup a CI/CD pipeline with Gitlab and Render.
 The pipeline is triggered when a commit is made to the main branch on the Gitlab repository.**
 
-it is made up of 6 steps: 
+it is made up of 6 steps:
+
 * building
 * linting
 * testing
@@ -25,7 +26,7 @@ it is made up of 6 steps:
 Requirements
 ============
 
-In order to use the application, you will need these prerequisites:
+In order to use the pipeline CI/CD, you will need these prerequisites:
 
 1. **Python** install on your pc for launch the command.
 2. **Sentry** account to log the application.
@@ -77,6 +78,16 @@ On the general parameters, go to visibility and put settings like on this image:
 
 .. image:: img/visibility.png
 
+
+Docker
+======
+
+Create a **DockerHub repository**.
+The repository name must match the **DOCKER_HUB_USERNAME** and your docker password 
+must match with the DOCKER_HUB_PASSWORD variable set in **Gitlab**.
+
+The Gitlab workflow will build and push the app image in the DockerHub repository.
+All images are tagged with the Gitlab commit “hash” ($CI_COMMIT_SHORT_SHA).
 
 Render
 ======
