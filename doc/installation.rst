@@ -5,9 +5,11 @@ Installation
 ============
 
 **This section will help you to install the application:**
+
 + from a Gitlab repository
 + with building an image of the app and run it with Docker
 + from a Docker Hub image
+
 
 From a Gitlab repository
 ======================
