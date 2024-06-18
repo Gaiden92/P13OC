@@ -17,7 +17,7 @@ From a Gitlab repository
 In order to use the pipeline CI/CD, you will need these prerequisites:
 
 1. **Python** install on your pc for launch the command.
-3. **Git** install on your pc for the git clone command.
+2. **Git** install on your pc for the git clone command.
 
 **Open a shell and type this command on your terminal to clone the project:**
 
@@ -116,6 +116,7 @@ Build a Docker image to run the application locally
 **Download and install Docker Dekstop**
 
 Change to the project directory cd /path/to/OC_LETTINGS
+
 1. Do the same step that the Installation from a Gitlab repository until the Sentry part. 
 2. Make sure that the .env file has been previously created (see environment variables)
 3. Build image docker build -t <image-name> . with the desired image name
@@ -175,6 +176,7 @@ Admin dashboard
 .. image:: img/admin.png
 
 To log:
+
 * username: admin
 * password: Abc1234! 
 

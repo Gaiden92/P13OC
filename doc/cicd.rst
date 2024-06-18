@@ -27,7 +27,6 @@ Requirements
 ============
 
 In order to use the pipeline CI/CD, you will need these prerequisites:
-
 1. **Python** install on your pc for launch the command.
 2. **Sentry** account to log the application.
 3. **Gitlab** account to setup the CI/CD pipeline and code versionning.
@@ -110,8 +109,8 @@ Add `:latest` to select the latest image:
 Third, complete the informations (you can just change the name of the project for now)
 
 **We need to add 2 variables:**
-* key = DJANGO_DEBUG, value = 0
-* key = SECRET_KEY, clique on `generate`
++ key = DJANGO_DEBUG, value = 0
++ key = SECRET_KEY, clique on `generate`
 
 .. image:: img/render-variables.png
 
@@ -128,13 +127,14 @@ this is the DEPLOY_HOOK_1, and after `?key=` this is the DEPLOY_HOOK_2
 
 So for example :
 `https://api.render.com/deploy/srv-cd45454fd?key=rzacZY4tgh`
-DEPLOY_HOOK_1 = cd45454fd
-DEPLOY_HOOK_2 = rzacZY4tgh
+
++ DEPLOY_HOOK_1 = cd45454fd
++ DEPLOY_HOOK_2 = rzacZY4tgh
 
 Now go back to your Gitlab account and go to the CI/CD parameters.
 Add these 2 variables : 
-* DEPLOY_HOOK_1 = the value deploy-hook after `srv-`
-* DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
++ DEPLOY_HOOK_1 = the value deploy-hook after `srv-`
++ DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
 
 
 .. figure:: img/deploy-success.png
