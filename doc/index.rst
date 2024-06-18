@@ -21,13 +21,11 @@ This application is the last project of the OpenClassRooms Python Developer Desi
    :caption: Contenu
 
    Description
-   Prerequisites
    Technologies
+   Database
    Installation
    Testing
    User guide
-   Database
-   Docker
    CI-CD
 
 Indices and tables
@@ -37,14 +35,12 @@ Indices and tables
 
 :ref:`Technologies`
 
+:ref:`Database`
+
 :ref:`Installation`
 
 :ref:`Testing`
 
 :ref:`User Guide`
-
-:ref:`Database`
-
-:ref:`Docker`
 
 :ref:`CI-CD`
