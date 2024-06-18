@@ -4,9 +4,20 @@
 Installation
 ============
 
+**This section will help you to install the application:**
+* from a Gitlab repository
+* with building an image of the app and run it with Docker
+* from a Docker Hub image
 
 From a Gitlab repository
 ======================
+
+**Requirements**
+
+In order to use the pipeline CI/CD, you will need these prerequisites:
+
+1. **Python** install on your pc for launch the command.
+3. **Git** install on your pc for the git clone command.
 
 **Open a shell and type this command on your terminal to clone the project:**
 
@@ -95,19 +106,32 @@ You can now access to the application in any web browser at http://127.0.0.1:808
 Build a Docker image to run the application locally
 ===================================================
 
+**Requirements**
+
+1. **Python** install on your pc for launch the command.
+2. **Git** install on your pc for the git clone command.
+3. **Docker** install on your pc to build and run the image. 
+
+
 **Download and install Docker Dekstop**
 
 Change to the project directory cd /path/to/OC_LETTINGS
-
-1. Make sure that the .env file has been previously created (see environment variables)
-2. Build image docker build -t <image-name> . with the desired image name
-3. Use docker run --rm -p 8080:8000 --env-file .env <image-name> command, replacing image-name with the one built before
+1. Do the same step that the Installation from a Gitlab repository until the Sentry part. 
+2. Make sure that the .env file has been previously created (see environment variables)
+3. Build image docker build -t <image-name> . with the desired image name
+4. Use docker run --rm -p 8080:8000 --env-file .env <image-name> command, replacing image-name with the one built before
 
 You can access the application in any web browser at http://127.0.0.1:8080/
 
 
 From a DockerHub image
 ======================
+
+**Requirements**
+
+1. **Python** install on your pc for launch the command.
+2. **Git** install on your pc for the git clone command.
+3. **Docker** install on your pc to build and run the image. 
 
 **Download and install Docker Desktop**
 
@@ -151,7 +175,6 @@ Admin dashboard
 .. image:: img/admin.png
 
 To log:
-
 * username: admin
 * password: Abc1234! 
 

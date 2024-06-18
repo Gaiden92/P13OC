@@ -137,7 +137,7 @@ Add these 2 variables :
 * DEPLOY_HOOK_2 =  the value of your deploy-hook `?key=`
 
 
-.. figure:: img/render-success.png
+.. figure:: img/deploy-success.png
     :align: center
 
     Launch a pipeline to test and you will see that the deployement on **Render** success !
