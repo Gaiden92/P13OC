@@ -3,6 +3,7 @@ variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
   USERNAME: ${USERNAME}
   PASSWORD: ${PASSWORD}
+  SECRET_KEY: ${SECRET_KEY}
 
 default:
   image: python:latest
