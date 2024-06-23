@@ -32,6 +32,8 @@ compilation:
     - python manage.py migrate
     - python manage.py check
     - echo "Building success"
+  only:
+  - branches
 
 linting:
   stage: lint
@@ -40,6 +42,8 @@ linting:
     - echo "Start linting..."
     - flake8
     - echo "Linting success."
+  only:
+  - branches
 
 tests:
   stage: test
@@ -48,6 +52,8 @@ tests:
     - echo "Start testing..."
     - python manage.py test
     - echo "Testing success."
+  only:
+  - branches
 
 coverage:
   stage: coverage
@@ -60,6 +66,8 @@ coverage:
       coverage_report:
         coverage_format: cobertura
         path: coverage.xml
+  only:
+  - branches
 
 packaging:
   stage: package
@@ -77,6 +85,8 @@ packaging:
     - docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME
     - docker pull $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME
     - echo "Packaging success."
+  only:
+    - main
 
 deploy:
   stage: deploy

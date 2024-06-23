@@ -7,7 +7,10 @@ from django.conf import settings
 
 from . import views
 
-path_admin = path('secret0208/', admin.site.urls) if 'RENDER' in os.environ else path('admin/', admin.site.urls)
+if 'RENDER' in os.environ:
+    path_admin = path('secret0208/', admin.site.urls)
+else:
+    path_admin = path('admin/', admin.site.urls)
 
 urlpatterns = [
     path('', views.index, name='index'),
