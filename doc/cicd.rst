@@ -26,6 +26,7 @@ Requirements
 ============
 
 In order to use the pipeline CI/CD, you will need these prerequisites:
+
 1. **Python** install on your pc for launch the command.
 2. **Sentry** account to log the application.
 3. **Gitlab** account to setup the CI/CD pipeline and code versionning.
@@ -47,7 +48,7 @@ Gitlab
 
 **Next we will push the project from your local machine to your new repository:**
 
-.. code::
+.. code-block::
 
     git remote add origin "your https url repository"
     git push origin main
@@ -143,5 +144,19 @@ Add these 2 variables :
 
     Launch a pipeline to test and you will see that the deployement on **Render** success !
 
+Documentation
+=============
+
+**You can generate the application documentation**
+**From the root directory of your project, run the make command html:**
+
+.. code-block::
+
+    make html
+
+**This will generate the documentation in HTML format**
+
+**The generated files will be placed in the doc/build/html directory of your
+project*
 
 Reference `CI-CD`_.

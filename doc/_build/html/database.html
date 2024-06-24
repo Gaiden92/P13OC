@@ -73,13 +73,62 @@
              
   <section id="database">
 <span id="id1"></span><h1>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h1>
-<p><strong>The database contains 3 main tables:</strong></p>
+<p><strong>The application use a SQLlite database for the data</strong></p>
+<p><strong>This database contains 4 main tables:</strong></p>
 <ol class="arabic simple">
-<li><p>Users</p></li>
-<li><p>Lettings</p></li>
-<li><p>Profiles</p></li>
+<li><p>auth_user</p></li>
+<li><p>lettings_letting</p></li>
+<li><p>lettings_adresse</p></li>
+<li><p>profiles_profile</p></li>
 </ol>
 <img alt="_images/database-structure.png" src="_images/database-structure.png" />
+<p>The composition of the application’s models:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Proprety</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adresse</p></td>
+<td><p>number</p></td>
+<td><p>int</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>street</p></td>
+<td><p>varchar</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>city</p></td>
+<td><p>varchar</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>zip_code</p></td>
+<td><p>varchar</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>country_iso_code</p></td>
+<td><p>varchar</p></td>
+</tr>
+<tr class="row-odd"><td><p>Letting</p></td>
+<td><p>title</p></td>
+<td><p>varchar</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>address</p></td>
+<td><p>int</p></td>
+</tr>
+<tr class="row-odd"><td><p>Profile</p></td>
+<td><p>user</p></td>
+<td><p>int</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>favorite_city</p></td>
+<td><p>varchar</p></td>
+</tr>
+</tbody>
+</table>
 <p>Reference <a class="reference internal" href="#database">Database</a>.</p>
 </section>
 

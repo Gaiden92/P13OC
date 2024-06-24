@@ -45,8 +45,11 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">CI/CD</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
 <li><a class="reference internal" href="#gitlab">Gitlab</a></li>
+<li><a class="reference internal" href="#docker">Docker</a></li>
 <li><a class="reference internal" href="#render">Render</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -77,12 +80,38 @@
              
   <section id="ci-cd">
 <span id="id1"></span><h1>CI/CD<a class="headerlink" href="#ci-cd" title="Link to this heading"></a></h1>
-<p><strong>This page will help you to setup a CI/CD pipeline with Gitlab and Render.</strong></p>
+<p><strong>This page will help you to setup a CI/CD pipeline with Gitlab and Render.
+The pipeline is triggered when a commit is made to the main branch on the Gitlab repository.</strong></p>
+<p>it is made up of 6 steps:</p>
+<ul class="simple">
+<li><p>building</p></li>
+<li><p>linting</p></li>
+<li><p>testing</p></li>
+<li><p>test coverage</p></li>
+<li><p>packaging</p></li>
+<li><p>deployment</p></li>
+</ul>
+<figure class="align-default" id="id2">
+<img alt="_images/pipeline.png" src="_images/pipeline.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The total pipeline duration is approximately 5 minutes</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<p>In order to use the pipeline CI/CD, you will need these prerequisites:</p>
+<ol class="arabic simple">
+<li><p><strong>Python</strong> install on your pc for launch the command.</p></li>
+<li><p><strong>Sentry</strong> account to log the application.</p></li>
+<li><p><strong>Gitlab</strong> account to setup the CI/CD pipeline and code versionning.</p></li>
+<li><p><strong>DockerHub</strong> account to package the application.</p></li>
+<li><p><strong>Render</strong> account to deploy the application.</p></li>
+</ol>
+</section>
 <section id="gitlab">
 <h2>Gitlab<a class="headerlink" href="#gitlab" title="Link to this heading"></a></h2>
-<p><strong>Now, create a new repository on your Gitlab account:</strong></p>
-<img alt="_images/gitlab-repo.png" src="_images/gitlab-repo.png" />
-<img alt="_images/create-project.png" src="_images/create-project.png" />
+<p><strong>Create a new repository on your Gitlab account:</strong></p>
+<img alt="_images/gitlab-repo.png" class="align-center" src="_images/gitlab-repo.png" />
 <p><strong>Complete the informations and put the visibility in “public”:</strong></p>
 <img alt="_images/settings-repo.png" src="_images/settings-repo.png" />
 <p><strong>Next we will push the project from your local machine to your new repository:</strong></p>
@@ -90,22 +119,22 @@
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id2">
+<figure class="align-center" id="id3">
 <img alt="_images/variables.png" src="_images/variables.png" />
 <figcaption>
-<p><span class="caption-text">Go to the tab Parameters, CI/CD, variables and click on display</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-text">Go to the tab Parameters, CI/CD, variables and click on display</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id3">
+<figure class="align-center" id="id4">
 <img alt="_images/all-variables.png" src="_images/all-variables.png" />
 <figcaption>
-<p><span class="caption-text">Complete these variables with your data</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">Complete these variables with your data</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id4">
+<figure class="align-center" id="id5">
 <img alt="_images/django-debug.png" src="_images/django-debug.png" />
 <figcaption>
-<p><span class="caption-text">For DJANGO_DEBUG variable put at <cite>False</cite></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-text">For DJANGO_DEBUG variable put at <cite>False</cite></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>For these variables:</p>
@@ -117,10 +146,18 @@
 <p>On the general parameters, go to visibility and put settings like on this image:</p>
 <img alt="_images/visibility.png" src="_images/visibility.png" />
 </section>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Link to this heading"></a></h2>
+<p>Create a <strong>DockerHub repository</strong>.
+The repository name must match the <strong>DOCKER_HUB_USERNAME</strong> and your docker password
+must match with the DOCKER_HUB_PASSWORD variable set in <strong>Gitlab</strong>.</p>
+<p>The Gitlab workflow will build and push the app image in the DockerHub repository.
+All images are tagged with the Gitlab commit “hash” ($CI_COMMIT_SHORT_SHA).</p>
+</section>
 <section id="render">
 <h2>Render<a class="headerlink" href="#render" title="Link to this heading"></a></h2>
-<p>Once, youre create your <strong>Render</strong> account, you need to setup for the deployement:</p>
-<p>First, click on <cite>New Web Service</cite>:</p>
+<p>Once, youre create your <strong>Render</strong> account, you need to setup for the deployement:
+First, click on <cite>New Web Service</cite>:</p>
 <img alt="_images/render-dashboard.png" src="_images/render-dashboard.png" />
 <p>Second, click on <cite>Existing image</cite> and select the repo from your Docker Hub.
 Add <cite>:latest</cite> to select the latest image:</p>
@@ -140,15 +177,31 @@ Add <cite>:latest</cite> to select the latest image:</p>
 this is the DEPLOY_HOOK_1, and after <cite>?key=</cite> this is the DEPLOY_HOOK_2</p>
 <p>So for example :
 <cite>https://api.render.com/deploy/srv-cd45454fd?key=rzacZY4tgh</cite></p>
-<p>DEPLOY_HOOK_1 = cd45454fd
-DEPLOY_HOOK_2 = rzacZY4tgh</p>
+<ul class="simple">
+<li><p>DEPLOY_HOOK_1 = cd45454fd</p></li>
+<li><p>DEPLOY_HOOK_2 = rzacZY4tgh</p></li>
+</ul>
 <p>Now go back to your Gitlab account and go to the CI/CD parameters.
 Add these 2 variables :</p>
 <ul class="simple">
 <li><p>DEPLOY_HOOK_1 = the value deploy-hook after <cite>srv-</cite></p></li>
 <li><p>DEPLOY_HOOK_2 =  the value of your deploy-hook <cite>?key=</cite></p></li>
 </ul>
-<p>Launch a pipeline to test and you will see that the deployement on <strong>Render</strong> success !</p>
+<figure class="align-center" id="id6">
+<img alt="_images/deploy-success.png" src="_images/deploy-success.png" />
+<figcaption>
+<p><span class="caption-text">Launch a pipeline to test and you will see that the deployement on <strong>Render</strong> success !</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p><strong>You can generate the application documentation</strong>
+<strong>From the root directory of your project, run the make command html:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p><strong>This will generate the documentation in HTML format</strong></p>
 <p>Reference <a class="reference internal" href="#ci-cd">CI-CD</a>.</p>
 </section>
 </section>

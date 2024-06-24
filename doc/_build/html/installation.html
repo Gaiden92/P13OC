@@ -45,8 +45,10 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Installation</a><ul>
-<li><a class="reference internal" href="#clone-the-project-on-your-local-machine">Clone the project on your local machine</a></li>
-<li><a class="reference internal" href="#run-in-local">Run in local</a></li>
+<li><a class="reference internal" href="#environments-variables">Environments variables</a></li>
+<li><a class="reference internal" href="#from-a-gitlab-repository">From a Gitlab repository</a></li>
+<li><a class="reference internal" href="#build-a-docker-image-to-run-the-application-locally">Build a Docker image to run the application locally</a></li>
+<li><a class="reference internal" href="#from-a-dockerhub-image">From a DockerHub image</a></li>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#admin-dashboard">Admin dashboard</a></li>
 </ul>
@@ -79,15 +81,48 @@
              
   <section id="installation">
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<section id="clone-the-project-on-your-local-machine">
-<h2>Clone the project on your local machine<a class="headerlink" href="#clone-the-project-on-your-local-machine" title="Link to this heading"></a></h2>
-<p><strong>Type this command on your terminal to clone the project:</strong></p>
+<p><strong>This section will help you to install the application:</strong></p>
+<ul class="simple">
+<li><p>from a Gitlab repository</p></li>
+<li><p>with building an image of the app and run it with Docker</p></li>
+<li><p>from a Docker Hub image</p></li>
+</ul>
+<section id="environments-variables">
+<h2>Environments variables<a class="headerlink" href="#environments-variables" title="Link to this heading"></a></h2>
+<p><strong>First create a .env files for add the environments variables:
+Create a ‘.env’ files at the project root and copy paste this code:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span><span class="o">=</span><span class="s2">&quot;yoursecretkey&quot;</span>
+<span class="n">DSN</span><span class="o">=</span><span class="s2">&quot;your dsn sentry&quot;</span>
+<span class="n">DJANGO_DEBUG</span><span class="o">=</span><span class="s1">&#39;True&#39;</span>
+<span class="n">ALLOWED_HOSTS</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>The secret key is a component essential for the security of your django application. She’s use by Django
+for:</strong></p>
+<ul class="simple">
+<li><p>cryptographic signatures</p></li>
+<li><p>password hashing</p></li>
+<li><p>injection protection</p></li>
+</ul>
+<p><strong>The Sentry DSN is an url to allows the application to send events to your Sentry instance:</strong></p>
+<ul class="simple">
+<li><p>error</p></li>
+<li><p>exceptions</p></li>
+<li><p>messages</p></li>
+</ul>
+</section>
+<section id="from-a-gitlab-repository">
+<h2>From a Gitlab repository<a class="headerlink" href="#from-a-gitlab-repository" title="Link to this heading"></a></h2>
+<p><strong>Requirements</strong></p>
+<p>In order to use the pipeline CI/CD, you will need these prerequisites:</p>
+<ol class="arabic simple">
+<li><p><strong>Python</strong> install on your pc for launch the command.</p></li>
+<li><p><strong>Git</strong> install on your pc for the git clone command.</p></li>
+</ol>
+<p><strong>Open a shell and type this command on your terminal to clone the project:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="s1">&#39;https://gitlab.com/sf5810217/oc_lettings.git&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="run-in-local">
-<h2>Run in local<a class="headerlink" href="#run-in-local" title="Link to this heading"></a></h2>
 <p><strong>Next, we need to create our local environment:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
 </pre></div>
@@ -109,31 +144,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p><strong>Finally, we must to create a .env files for the configuration settings:
-Create a ‘.env’ files and copy paste this code:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s2">&quot;yoursecretkey&quot;</span>
-<span class="n">DSN</span> <span class="o">=</span> <span class="s2">&quot;your dsn sentry&quot;</span>
-<span class="n">DJANGO_DEBUG</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
-<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p><strong>The secret key is a component essential for the security of your django application. She’s use by Django
-for:</strong></p>
-<ul class="simple">
-<li><p>cryptographic signatures</p></li>
-<li><p>password hashing</p></li>
-<li><p>injection protection</p></li>
-</ul>
-<p><strong>The Sentry DSN is an url to allows the application to send events to your Sentry instance:</strong></p>
-<ul class="simple">
-<li><p>error</p></li>
-<li><p>exceptions</p></li>
-<li><p>messages</p></li>
-</ul>
-</section>
-<section id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h2>
-<p><strong>Once you clone the repository and files .env create, we need to make the migrations database:</strong></p>
+<p><strong>Once you clone the repository and file .env create, we need to make the migrations database:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigrations</span>
 <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
 <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">check</span>
@@ -143,27 +154,62 @@ for:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
 </div>
-<p><strong>Do some tests</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+<p>You can now access to the application in any web browser at <a class="reference external" href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></p>
+</section>
+<section id="build-a-docker-image-to-run-the-application-locally">
+<h2>Build a Docker image to run the application locally<a class="headerlink" href="#build-a-docker-image-to-run-the-application-locally" title="Link to this heading"></a></h2>
+<p><strong>Requirements</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Python</strong> install on your pc for launch the command.</p></li>
+<li><p><strong>Git</strong> install on your pc for the git clone command.</p></li>
+<li><p><strong>Docker</strong> install on your pc to build and run the image.</p></li>
+</ol>
+<p><strong>Download and install Docker Dekstop</strong></p>
+<p>Change to the project directory cd /path/to/OC_LETTINGS</p>
+<ol class="arabic simple">
+<li><p>Do the same step that the Installation from a Gitlab repository until the Sentry part.</p></li>
+<li><p>Make sure that the .env file has been previously created (see environment variables)</p></li>
+<li><p>Build image docker build -t &lt;image-name&gt; . with the desired image name</p></li>
+<li><p>Use docker run –rm -p 8080:8000 –env-file .env &lt;image-name&gt; command, replacing image-name with the one built before</p></li>
+</ol>
+<p>You can access the application in any web browser at <a class="reference external" href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></p>
+</section>
+<section id="from-a-dockerhub-image">
+<h2>From a DockerHub image<a class="headerlink" href="#from-a-dockerhub-image" title="Link to this heading"></a></h2>
+<p><strong>Requirements</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Python</strong> install on your pc for launch the command.</p></li>
+<li><p><strong>Git</strong> install on your pc for the git clone command.</p></li>
+<li><p><strong>Docker</strong> install on your pc to build and run the image.</p></li>
+</ol>
+<p><strong>Download and install Docker Desktop</strong></p>
+<ol class="arabic simple">
+<li><p>First create the .env files (See environments variables section)</p></li>
+<li><p>Go to the Docker repository: <a class="reference external" href="https://hub.docker.com/repository/docker/safo92150/oc_lettings/tags">https://hub.docker.com/repository/docker/safo92150/oc_lettings/tags</a></p></li>
+<li><p>Copy the tag you would like to use (preferably the most recent)</p></li>
+<li><p>Use docker run –rm -p 8080:8000 –env-file .env safo92150/oc_lettings:&lt;image-tag&gt; command, replacing image-tag with the desired tag</p></li>
+</ol>
+<p>You can access the application in any web browser at <a class="reference external" href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></p>
+</section>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h2>
+<p><strong>Until you can launch the application with this command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
 </div>
-<p><strong>Verify linting</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flake8</span>
-</pre></div>
-</div>
-<p><strong>Verify the test coverage and generate a html report</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">cov</span><span class="o">=.</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span> <span class="n">html</span>
-</pre></div>
-</div>
+<p><strong>You can now go on the homepage at http://127.0.0.1:8000/ and search some lettings.</strong></p>
+<img alt="_images/home.png" src="_images/home.png" />
 </section>
 <section id="admin-dashboard">
 <h2>Admin dashboard<a class="headerlink" href="#admin-dashboard" title="Link to this heading"></a></h2>
 <p><strong>To access to the admin dashboard, go on admin login : http://127.0.0.1:8000/admin/</strong></p>
 <img alt="_images/admin.png" src="_images/admin.png" />
-<p>To log:
-username: <strong>admin</strong>
-password: <strong>Abc1234!</strong></p>
-<img alt="_images/login.png" src="_images/login.png" />
+<p>To log:</p>
+<ul class="simple">
+<li><p>username: admin</p></li>
+<li><p>password: Abc1234!</p></li>
+</ul>
+<img alt="_images/login.png" class="align-center" src="_images/login.png" />
 <p><strong>You are now on your dashboard and you can easily manage your data</strong></p>
 <img alt="_images/dashboard.png" src="_images/dashboard.png" />
 <p>Reference <a class="reference internal" href="#installation">Installation</a>.</p>
