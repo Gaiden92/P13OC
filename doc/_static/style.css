@@ -1,5 +1,10 @@
-h2 {
-    border: 1px solid black;
+h1{
+    border: 1px dashed solid black;
     padding: 10px;
     text-align: center;
+}
+
+h2 {
+    border: 1px solid black;
+    
 }
