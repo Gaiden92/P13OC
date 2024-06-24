@@ -10,6 +10,31 @@ Installation
 + with building an image of the app and run it with Docker
 + from a Docker Hub image
 
+Environments variables
+======================
+
+**First create a .env files for add the environments variables:
+Create a '.env' files at the project root and copy paste this code:**
+
+.. code-block::
+
+    SECRET_KEY="yoursecretkey"
+    DSN="your dsn sentry"
+    DJANGO_DEBUG='True'
+    ALLOWED_HOSTS=['*']
+
+**The secret key is a component essential for the security of your django application. She's use by Django
+for:**
+
+* cryptographic signatures
+* password hashing
+* injection protection
+
+**The Sentry DSN is an url to allows the application to send events to your Sentry instance:**
+
+* error
+* exceptions
+* messages
 
 From a Gitlab repository
 ======================
@@ -59,33 +84,6 @@ In order to use the pipeline CI/CD, you will need these prerequisites:
 .. code-block::
 
     pip install -r requirements.txt
-
-Environments variables
-======================
-
-**Finally, we must to create a .env files to add the environments variables:
-Create a '.env' files and copy paste this code:**
-
-.. code-block::
-
-    SECRET_KEY="yoursecretkey"
-    DSN="your dsn sentry"
-    DJANGO_DEBUG='True'
-    ALLOWED_HOSTS=['*']
-
-**The secret key is a component essential for the security of your django application. She's use by Django
-for:**
-
-* cryptographic signatures
-* password hashing
-* injection protection
-
-**The Sentry DSN is an url to allows the application to send events to your Sentry instance:**
-
-* error
-* exceptions
-* messages
-
 
 **Once you clone the repository and file .env create, we need to make the migrations database:**
 
@@ -150,24 +148,15 @@ Quickstart
 ==========
 
 
-**Do some tests**
+**Until you can launch the application with this command:**
 
 .. code-block::
+    
+    python manage.py runserver
 
-    python manage.py test
+**You can now go on the homepage at http://127.0.0.1:8000/ and search some lettings.**
 
-**Verify linting**
-
-
-.. code-block::
-
-    flake8
-
-**Verify the test coverage and generate a html report**
-
-.. code-block::
-
-    pytest --cov=. --cov-report html
+.. image:: img/home.png
 
 
 Admin dashboard
