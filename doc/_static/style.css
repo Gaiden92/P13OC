@@ -1,10 +1,12 @@
-h1{
-    border: 1px dashed solid black;
+h1, h2{
     padding: 10px;
     text-align: center;
+}
+h1{
+    border: 5px black;
+    border-style: double;
 }
 
 h2 {
     border: 1px solid black;
-    
 }
