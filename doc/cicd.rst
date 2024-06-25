@@ -112,6 +112,7 @@ Third, complete the informations (you can just change the name of the project fo
 
 + key = DJANGO_DEBUG, value = 0
 + key = SECRET_KEY, clique on `generate`
++ key = PRODUCTION_ADMIN, add the value that you want set for the admin path in production.
 
 .. image:: img/render-variables.png
 
@@ -154,7 +155,7 @@ the build compilation on your dashboard and go on the generated documents
 
 .. image:: img/readthedoc-dashboard.png
     :align: center
-    
+
 **But you can generate the application documentation localy too.**
 
 **From the root directory of your project, run the make command html:**
