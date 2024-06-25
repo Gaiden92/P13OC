@@ -8,7 +8,8 @@ from django.conf import settings
 from . import views
 
 if 'RENDER' in os.environ:
-    path_admin = path('secret0208/', admin.site.urls)
+    prod_admin = os.getenv('PRODUCTION_ADMIN')
+    path_admin = path(prod_admin + '/', admin.site.urls)
 else:
     path_admin = path('admin/', admin.site.urls)
 
