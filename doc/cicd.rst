@@ -147,7 +147,16 @@ Add these 2 variables :
 Documentation
 =============
 
-**You can generate the application documentation**
+**For the documentation you need to create an account on https://readthedocs.org/**
+**When the pipeline is execute, the application documentation will be automatically compilated, you can see
+the build compilation on your dashboard and go on the generated documents 
+.**
+
+.. image:: img/readthedoc-dashboard.png
+    :align: center
+    
+**But you can generate the application documentation localy too.**
+
 **From the root directory of your project, run the make command html:**
 
 .. code-block::
