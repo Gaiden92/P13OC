@@ -153,7 +153,7 @@ Documentation
 the build compilation on your dashboard and go on the generated documents 
 .**
 
-.. image:: img/readthedoc-dashboard.png
+.. image:: img/readthedocs-dashboard.png
     :align: center
 
 **But you can generate the application documentation localy too.**
@@ -167,6 +167,6 @@ the build compilation on your dashboard and go on the generated documents
 **This will generate the documentation in HTML format**
 
 **The generated files will be placed in the doc/build/html directory of your
-project*
+project**
 
 Reference `CI-CD`_.
