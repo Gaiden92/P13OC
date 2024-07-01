@@ -38,6 +38,7 @@ compilation:
 linting:
   stage: lint
   allow_failure: true
+  before_script: []
   script:
     - echo "Start linting..."
     - flake8
@@ -57,6 +58,7 @@ tests:
 
 coverage:
   stage: coverage
+  before_script: []
   script:
     - echo "Start tests covering..."
     - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
