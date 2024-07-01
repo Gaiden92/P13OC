@@ -20,10 +20,7 @@ cache:
     - "$CI_PROJECT_DIR/.cache/pip"
 
 before_script:
-    - python -m venv venv
-    - source venv/bin/activate
     - pip install --upgrade pip
-    - pip install django
     - pip install -r requirements.txt
 
 compilation:
@@ -41,7 +38,6 @@ compilation:
 linting:
   stage: lint
   allow_failure: true
-  before_script: []
   script:
     - echo "Start linting..."
     - flake8
@@ -52,7 +48,6 @@ linting:
 tests:
   stage: test
   allow_failure: false
-  before_script: []
   script:
     - echo "Start testing..."
     - python manage.py test
@@ -62,10 +57,9 @@ tests:
 
 coverage:
   stage: coverage
-  before_script: []
   script:
     - echo "Start tests covering..."
-    - pytest --cov=. 
+    - pytest --cov=.
     - echo "Testing coverage success." 
   only:
   - branches
