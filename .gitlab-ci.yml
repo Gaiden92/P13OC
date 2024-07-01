@@ -19,14 +19,13 @@ cache:
   paths:
     - "$CI_PROJECT_DIR/.cache/pip"
 
-before_script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
 
 compilation:
   stage: build
   allow_failure: false
   script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
     - echo "Start building..."
     - python manage.py makemigrations
     - python manage.py migrate
