@@ -17,7 +17,7 @@ stages:
 
 cache:
   paths:
-    - "$CI_PROJECT_DIR/.cache/pip"
+    - ~/.cache/pip/
 
 before_script:
     - pip install --upgrade pip
