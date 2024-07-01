@@ -38,7 +38,7 @@ def index(request: object) -> object:
 # Maecenas auctor, est ut luctus congue, dui enim mattis enim,
 # ac condimentum velit libero in magna. Suspendisse potenti.
 # In tempus a nisi sed laoreet. Suspendisse porta dui eget
-# sem accumsan interdum. Ut quis urna pellentesque justo mattis
+# sem accumsan interdum. Ut quis urna pellentesque justo matti
 # ullamcorper ac non tellus. In tristique mauris eu velit fermentum,
 # tempus pharetra est luctus. Vivamus consequat aliquam libero,
 # eget bibendum lorem. Sed non dolor risus. Mauris condimentum auctor elementum.
