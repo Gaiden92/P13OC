@@ -17,7 +17,7 @@ stages:
 
 cache:
   paths:
-    - .cache/pip
+    - "$CI_PROJECT_DIR/.cache/pip"
 
 before_script:
     - pip install --upgrade pip
@@ -38,8 +38,6 @@ compilation:
 linting:
   stage: lint
   allow_failure: true
-  before_script:
-    - pip install flake8
   script:
     - echo "Start linting..."
     - flake8
@@ -50,8 +48,6 @@ linting:
 tests:
   stage: test
   allow_failure: false
-  before_script:
-    - pip install pytest
   script:
     - echo "Start testing..."
     - python manage.py test
@@ -61,17 +57,10 @@ tests:
 
 coverage:
   stage: coverage
-  before_script:
-    - pip install coverage
   script:
     - echo "Start tests covering..."
-    - pytest --cov=. --cov-report term --cov-report xml:coverage.xml
+    - pytest --cov=.
     - echo "Testing coverage success." 
-  artifacts:
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: coverage.xml
   only:
   - branches
 
